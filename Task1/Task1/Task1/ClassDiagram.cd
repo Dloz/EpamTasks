@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Task1.TaxiPark">
+    <Position X="1" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TaxiPark\TaxiPark.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Task1.TaxiCar">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAAAoAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TaxiCar\TaxiCar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Task1.TaxiCarBuilder">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAEAIAAAAAAAAAAAAAAAAAAAAAAACAAAgAAAAA=</HashCode>
+      <FileName>TaxiCarBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Task1.ITaxiPark">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TaxiPark\ITaxiPark.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Task1.ICar">
+    <Position X="3" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAoAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TaxiCar\ICar.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Task1.ITaxiCar">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TaxiCar\ITaxiCar.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
