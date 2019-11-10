@@ -9,15 +9,18 @@ namespace Task1
         /// <summary>
         /// Vehicle identification number.
         /// </summary>
-        int Vin { get; set; }
+        string Vin { get; set; }
         /// <summary>
-        /// Maximum reachable speed.
+        /// The number of car seats.
         /// </summary>
-        int MaxSpeed { get; set; }
-        /// <summary>
-        /// The amount of fuel car consumes for 100km.
-        /// </summary>
-        double Consumption { get; set; }
         int Seats { get; set; }
+        /// <summary>
+        /// Engine of the car.
+        /// </summary>
+        IEngine Engine { get; set; }
+        /// <summary>
+        /// Represents current weight of the car.
+        /// </summary>
+        int Weight { get; set; }
     }
 }

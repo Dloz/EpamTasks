@@ -12,15 +12,6 @@ namespace Task1
         {
             TaxiCar = new TaxiCar();
         }
-        public TaxiCarBuilder SetMaxSpeed(int maxSpeed)
-        {
-            return this;
-        }
-
-        public TaxiCarBuilder SetConsumption(double consumption)
-        {
-            return this;
-        }
 
         public TaxiCarBuilder SetSeats(int numberOfSeats)
         {
@@ -30,6 +21,12 @@ namespace Task1
         public static implicit operator TaxiCar(TaxiCarBuilder builder)
         {
             return builder.TaxiCar;
+        }
+
+        public TaxiCarBuilder SetEngine(IEngine engine)
+        {
+            TaxiCar.Engine = engine;
+            return this;
         }
     }
 }
