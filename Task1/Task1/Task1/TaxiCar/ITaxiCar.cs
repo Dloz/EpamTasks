@@ -7,7 +7,7 @@ namespace Task1
     public interface ITaxiCar
     {
         /// <summary>
-        /// Identification number of a car at the Taxi Park.
+        /// Identification number of Taxi Park which owns the car.
         /// </summary>
         int Id { get; set; }
     }

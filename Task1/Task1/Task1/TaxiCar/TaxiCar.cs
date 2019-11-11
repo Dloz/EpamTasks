@@ -9,7 +9,7 @@ namespace Task1
         /// <summary>
         /// Vehicle identification number.
         /// </summary>
-        public string Vin { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Vin { get; set; }
         /// <summary>
         /// Represents maximum reachable speed of the car.
         /// </summary>
@@ -20,9 +20,9 @@ namespace Task1
             }
         }
         /// <summary>
-        /// Identification number of a car at the Taxi Park.
+        /// Identification number of Taxi Park which owns the car.
         /// </summary>
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id { get; set; }
         /// <summary>
         /// The number of car seats.
         /// </summary>
@@ -35,5 +35,9 @@ namespace Task1
         /// Represents current weight of the car.
         /// </summary>
         public int Weight { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        /// <summary>
+        /// Represents cost of the car.
+        /// </summary>
+        public int Cost { get; set; }
     }
 }

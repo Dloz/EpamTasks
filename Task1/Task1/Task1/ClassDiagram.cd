@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Task1.TaxiPark">
-    <Position X="1" Y="2.25" Width="1.5" />
+    <Position X="1" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAACAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>TaxiPark\TaxiPark.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,7 +11,7 @@
   <Class Name="Task1.TaxiCar">
     <Position X="3" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAoAEAAAAACAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAoAEABAAACAAAAAABAAAAAAAAAA=</HashCode>
       <FileName>TaxiCar\TaxiCar.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -26,30 +26,30 @@
   <Class Name="Task1.Engine">
     <Position X="8.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>Engine.cs</FileName>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>TaxiCar\Engine\Engine.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Task1.ElectricEngine">
     <Position X="10" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>ElectricEngine.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>TaxiCar\Engine\ElectricEngine.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Task1.ITaxiPark">
     <Position X="1" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>TaxiPark\ITaxiPark.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Task1.ICar">
     <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAoAAAAAAACAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAoAEABAAACAAAAAABAAAAAAAAAA=</HashCode>
       <FileName>TaxiCar\ICar.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -71,7 +71,7 @@
     <Position X="9" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>IEngine.cs</FileName>
+      <FileName>TaxiCar\Engine\IEngine.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

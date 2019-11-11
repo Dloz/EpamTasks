@@ -22,5 +22,7 @@ namespace Task1
         /// Represents current weight of the car.
         /// </summary>
         int Weight { get; set; }
+        int Cost { get; set; }
+        int MaxSpeed { get; }
     }
 }
