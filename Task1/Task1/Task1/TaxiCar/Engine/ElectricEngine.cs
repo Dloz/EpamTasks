@@ -9,10 +9,16 @@ namespace Task1
         /// <summary>
         /// Represents Amount Of Horse Power
         /// </summary>
-        public int Power { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Power { get; private set; }
         /// <summary>
         /// Represents Amount Of Miles Engine Can Pass.
         /// </summary>
-        public int Miles { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Miles { get; private set; }
+
+        public ElectricEngine(int power, int miles)
+        {
+            Power = power;
+            Miles = miles;
+        }
     }
 }

@@ -6,6 +6,9 @@ namespace Task1
 {
     public interface IEngine
     {
-        int Power { get; set; }
+        /// <summary>
+        /// Represents Amount Of Horse Power
+        /// </summary>
+        int Power { get; }
     }
 }

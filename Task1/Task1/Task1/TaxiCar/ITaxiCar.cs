@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Task1
 {
-    public interface ITaxiCar
+    public interface ITaxiCar: ICar
     {
         /// <summary>
         /// Identification number of Taxi Park which owns the car.
         /// </summary>
-        int Id { get; set; }
+        int ParkId { get; set; }
     }
 }

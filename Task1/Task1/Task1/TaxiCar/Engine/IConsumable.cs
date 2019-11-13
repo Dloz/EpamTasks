@@ -6,6 +6,9 @@ namespace Task1
 {
     public interface IConsumable
     {
-        double Consumption { get; set; }
+        /// <summary>
+        /// Represents consumption of fuel per 100km.
+        /// </summary>
+        double Consumption { get; }
     }
 }

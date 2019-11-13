@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Task1.Exceptions
 {
-    class EmptyParkException: Exception
+    class EmptyParkException : Exception
     {
-        
+        public EmptyParkException(string message) : base(message)
+        {
+        }
     }
 }

@@ -11,7 +11,6 @@ namespace Task1
         public TaxiCarBuilder()
         {
             taxiCar = new TaxiCar();
-            taxiCar.Vin = new Guid().ToString();
         }
         /// <summary>
         /// Constructs the seats of the car.
@@ -20,6 +19,7 @@ namespace Task1
         /// <returns></returns>
         public TaxiCarBuilder SetSeats(int numberOfSeats)
         {
+            taxiCar.Seats = numberOfSeats;
             return this;
         }
         /// <summary>
