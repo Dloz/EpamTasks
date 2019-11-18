@@ -1,5 +1,7 @@
 ﻿using System;
-using Task1;
+using Task1Library.Car;
+using Task1Library.Car.Engine;
+using Task1Library.TaxiPark;
 
 namespace Task1Console
 {
@@ -8,17 +10,17 @@ namespace Task1Console
         static void Main(string[] args)
         {
             // Create 2 taxi parks.
-            ITaxiPark taxiPark = new TaxiPark();
             ITaxiPark taxiPark1 = new TaxiPark();
+            ITaxiPark taxiPark2 = new TaxiPark();
 
             // Create different engines to test.
-            IEngine V6engine = new Engine(242, 9.8);
-            IEngine V8engine = new Engine(479, 15.7);
-            IEngine V12engine = new Engine(987, 20.8);
-            IEngine electricEngine = new ElectricEngine(256, 318);
+            IEngine V6engine = new FuelEngine(242, 9.8);
+            IEngine V8engine = new FuelEngine(479, 15.7);
+            IEngine V12engine = new FuelEngine(987, 20.8);
+            IEngine electricEngine = new ElectricEngine(256, 6.4);
 
             //Create cars and add them to taxi parks.
-            TaxiCar taxiCar = new TaxiCarBuilder()
+            TaxiCar taxiCar4 = new TaxiCarBuilder()
                 .SetCost(6400)
                 .SetEngine(V6engine)
                 .SetSeats(5)
@@ -44,27 +46,27 @@ namespace Task1Console
                 .SetSeats(5)
                 .SetWeight(2000);
 
-            taxiPark1.AddCar(taxiCar3);
-            taxiPark1.AddCar(taxiCar2);
-            taxiPark1.AddCar(taxiCar1);
+            taxiPark2.AddCar(taxiCar3);
+            taxiPark2.AddCar(taxiCar2);
+            taxiPark2.AddCar(taxiCar1);
 
-            taxiPark1.AddCar(taxiCar);
-            taxiPark1.AddCar(electricTaxiCar);
+            taxiPark2.AddCar(taxiCar4);
+            taxiPark2.AddCar(electricTaxiCar);
             //Test methods.
             foreach (var item in
-            taxiPark.SearchBySpeed(100, 300))
+            taxiPark1.SearchBySpeed(100, 300))
             {
                 Console.WriteLine(item);
                 Console.WriteLine();
             }
             foreach (var item in
-            taxiPark.SearchBySpeed(142))
+            taxiPark1.SearchBySpeed(142))
             {
                 Console.WriteLine(item);
                 Console.WriteLine();
             }
             //taxiPark.SortByConsumption();
-            taxiPark1.SortByConsumption();
+            taxiPark2.SortByConsumption();
             Console.WriteLine();
         }
     }

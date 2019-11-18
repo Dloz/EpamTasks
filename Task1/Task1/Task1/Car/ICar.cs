@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Task1Library.Car.Engine;
 
-namespace Task1
+namespace Task1Library.Car
 {
     public interface ICar
     {
@@ -21,14 +19,14 @@ namespace Task1
         /// <summary>
         /// Represents current weight of the car.
         /// </summary>
-        int Weight { get; }
+        double Weight { get; }
         /// <summary>
         /// Represents cost of the car in dollars.
         /// </summary>
-        int Cost { get; }
+        decimal Cost { get; }
         /// <summary>
         /// Represents maximum reachable speed of the car.
         /// </summary>
-        int MaxSpeed { get; }
+        double MaxSpeed { get; }
     }
 }

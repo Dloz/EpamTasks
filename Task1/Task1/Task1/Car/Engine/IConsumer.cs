@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Task1
+﻿namespace Task1Library.Car.Engine
 {
-    public interface IConsumable
+    public interface IConsumer
     {
         /// <summary>
         /// Represents consumption of fuel per 100km.

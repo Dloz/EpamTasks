@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Task1.Exceptions;
+using Task1Library.Car;
+using Task1Library.Car.Engine;
+using Task1Library.Exceptions;
 
-namespace Task1
+namespace Task1Library.TaxiPark
 {
     public class TaxiPark : ITaxiPark
     {
+        private readonly string _nonInitializedErrorMessage = "This car wasn't initialized";
+        private readonly string _haveNoCarsErrorMessage = "Current park have no cars.";
         /// <summary>
         /// This variable redefines Id of the Taxi Park when new Taxi Park has created.
         /// </summary>
@@ -15,19 +18,15 @@ namespace Task1
         /// <summary>
         /// Unique identifier of Taxi Park.
         /// </summary>
-        public int Id { get; private set; }
+        public int Id { get; }
         /// <summary>
-        /// Represents all of cars in the Taxi Park
+        /// Represents of all cars at the Taxi Park
         /// </summary>
         public ICollection<ITaxiCar> Cars { get; set; } = new List<ITaxiCar>();
         /// <summary>
-        /// Represents cost all of the cars.
+        /// Represents cost of all cars.
         /// </summary>
-        public double Cost {
-            get {
-                return Cars.Sum(c => c.Cost);
-            }
-        }
+        public decimal Cost => Cars.Sum(c => c.Cost);
         public TaxiPark()
         {
             Id = Identifier;
@@ -45,15 +44,29 @@ namespace Task1
         /// <returns>Returns cars which satisfies conditions.</returns>
         public IEnumerable<ICar> SearchBySpeed(int from, int to = 0)
         {
+            if (to <= 0) throw new ArgumentOutOfRangeException(nameof(to));
             if (Cars == null || Cars.Count == 0)
             {
-                throw new EmptyParkException("Current park have no cars.");
+                throw new EmptyParkException(_haveNoCarsErrorMessage);
             }
             if (to == 0)
             {
-                return Cars.Where(c => c.MaxSpeed == from).Select(c => c);
+                return Cars.Where(c => c.MaxSpeed >= from);
             }
-            return Cars.Where(c => c.MaxSpeed >= from && c.MaxSpeed <= to).Select(c => c);
+            return Cars.Where(c => c.MaxSpeed >= from && c.MaxSpeed <= to);
+        }
+        /// <summary>
+        /// Searches cars with specific speed value.
+        /// </summary>
+        /// <param name="speed">Specific speed value.</param>
+        /// <returns>Returns cars which satisfies conditions.</returns>
+        public IEnumerable<ICar> SearchBySpeed(int speed)
+        {
+            if (Cars == null || Cars.Count == 0)
+            {
+                throw new EmptyParkException(_haveNoCarsErrorMessage);
+            }
+            return Cars.Where(c => c.MaxSpeed == speed);
         }
         /// <summary>
         /// Sorting cars at the Park by Consumption value.
@@ -62,15 +75,16 @@ namespace Task1
         {
             if (Cars == null || Cars.Count == 0)
             {
-                throw new EmptyParkException("Current park have no cars.");
+                throw new EmptyParkException(_haveNoCarsErrorMessage);
             }
-            var electricCars = Cars
-                .Where(c => (c.Engine is ElectricEngine))
-                .ToList(); // Electric engines at first positions in collection.
-            var fuelCarsSorted = Cars
-                .Where(c => !(c.Engine is ElectricEngine))
-                .OrderBy(c => ((IConsumable)c.Engine).Consumption).ToList();
-            Cars = electricCars.Concat(fuelCarsSorted).ToList();
+//            var electricCars = Cars
+//                .Where(c => (c.Engine is ElectricEngine))
+//                .ToList(); // Electric engines at first positions in collection.
+//            var fuelCarsSorted = Cars
+//                .Where(c => !(c.Engine is ElectricEngine))
+//                .OrderBy(c => ((IConsumer)c.Engine).Consumption).ToList();
+//            Cars = electricCars.Concat(fuelCarsSorted).ToList();
+            Cars = Cars.OrderBy(c => ((IConsumer)c.Engine).Consumption).ToList();
 
         }
         /// <summary>
@@ -81,10 +95,12 @@ namespace Task1
         {
             if (car == null)
             {
-                throw new NullReferenceException("This car wasn't initialized");
+                throw new NullReferenceException(message: _nonInitializedErrorMessage);
             }
             car.ParkId = this.Id;
             Cars.Add(car);
         }
+
+
     }
 }

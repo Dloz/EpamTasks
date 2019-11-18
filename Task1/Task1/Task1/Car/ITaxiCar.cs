@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Task1
+﻿namespace Task1Library.Car
 {
     public interface ITaxiCar: ICar
     {

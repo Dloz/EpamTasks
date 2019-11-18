@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Task1.Exceptions
+namespace Task1Library.Exceptions
 {
-    class EmptyParkException : Exception
+    internal class EmptyParkException : Exception
     {
         public EmptyParkException(string message) : base(message)
         {

@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using Task1Library.Car.Engine;
 
-namespace Task1
+namespace Task1Library.Car
 {
     public class TaxiCar : ITaxiCar
     {
         /// <summary>
         /// Vehicle identification number.
         /// </summary>
-        public string Vin { get; set; }
+        public string Vin { get; }
         /// <summary>
         /// Represents maximum reachable speed of the car.
         /// </summary>
-        public int MaxSpeed 
-        {
-            get {
-                return Engine.Power * 1000 / Weight; // Magic formula to imitate variability of MaxSpeed.
-            }
-        }
+        public double MaxSpeed => Engine.Power * 1000 / Weight; // Magic formula to imitate variability of the speed.
+
         /// <summary>
         /// Identification number of Taxi Park which owns the car.
         /// </summary>
@@ -34,11 +29,11 @@ namespace Task1
         /// <summary>
         /// Represents current weight of the car.
         /// </summary>
-        public int Weight { get; set; }
+        public double Weight { get; set; }
         /// <summary>
         /// Represents cost of the car in dollars.
         /// </summary>
-        public int Cost { get; set; }
+        public decimal Cost { get; set; }
 
         public TaxiCar()
         {

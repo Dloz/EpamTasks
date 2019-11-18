@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using Task1Library.Car.Engine;
 
-namespace Task1
+namespace Task1Library.Car
 {
-    public class TaxiCarBuilder
+    public class CarBuilder
     {
-        private TaxiCar taxiCar;
+        private readonly Car _car;
 
-        public TaxiCarBuilder()
+        public CarBuilder()
         {
-            taxiCar = new TaxiCar();
+            _car = new Car();
         }
         /// <summary>
         /// Constructs the seats of the car.
         /// </summary>
         /// <param name="numberOfSeats">Number of seats</param>
         /// <returns></returns>
-        public TaxiCarBuilder SetSeats(int numberOfSeats)
+        public CarBuilder SetSeats(int numberOfSeats)
         {
-            taxiCar.Seats = numberOfSeats;
+            _car.Seats = numberOfSeats;
             return this;
         }
         /// <summary>
@@ -27,9 +25,9 @@ namespace Task1
         /// </summary>
         /// <param name="engine">Engine.</param>
         /// <returns></returns>
-        public TaxiCarBuilder SetEngine(IEngine engine)
+        public CarBuilder SetEngine(IEngine engine)
         {
-            taxiCar.Engine = engine;
+            _car.Engine = engine;
             return this;
         }
         /// <summary>
@@ -37,26 +35,25 @@ namespace Task1
         /// </summary>
         /// <param name="weight">Weight.</param>
         /// <returns></returns>
-        public TaxiCarBuilder SetWeight(int weight)
+        public CarBuilder SetWeight(int weight)
         {
-            taxiCar.Weight = weight;
+            _car.Weight = weight;
             return this;
         }
         /// <summary>
-        /// Contstructs cost of the car.
+        /// Constructs cost of the car.
         /// </summary>
         /// <param name="cost">Cost.</param>
         /// <returns></returns>
-        public TaxiCarBuilder SetCost(int cost)
+        public CarBuilder SetCost(int cost)
         {
-            taxiCar.Cost = cost;
+            _car.Cost = cost;
             return this;
         }
-        public static implicit operator TaxiCar(TaxiCarBuilder builder)
+        public static implicit operator Car(CarBuilder builder)
         {
-            return builder.taxiCar;
+            return builder._car;
         }
-
 
     }
 }
