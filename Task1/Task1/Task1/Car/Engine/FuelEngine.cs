@@ -9,7 +9,7 @@
         /// <summary>
         /// Represents consumption of fuel per 100km.
         /// </summary>
-        public double Consumption { get; private set; }
+        public double Consumption { get; }
         public FuelEngine(int power, double consumption)
         {
             Power = power;

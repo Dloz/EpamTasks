@@ -12,7 +12,7 @@ namespace Task1Library.Car
         /// <summary>
         /// Represents maximum reachable speed of the car.
         /// </summary>
-        public double MaxSpeed => Engine.Power * 1000 / Weight; // Magic formula to imitate variability of the speed.
+        public int MaxSpeed => (int)(Engine.Power * 1000 / Weight); // Magic formula to imitate variability of the speed.
 
         /// <summary>
         /// Identification number of Taxi Park which owns the car.
@@ -41,7 +41,7 @@ namespace Task1Library.Car
         }
         public override string ToString()
         {
-            return $"Car - {Vin}\nParkId - {ParkId}\nMaxSpeed - {MaxSpeed}";
+            return $"Car - {Vin}\nParkId - {ParkId}\nMaxSpeed - {MaxSpeed}\nConsumption - {((IConsumer)Engine).Consumption}\n";
         }
     }
 }

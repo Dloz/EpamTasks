@@ -10,8 +10,7 @@ namespace Task1Console
         static void Main(string[] args)
         {
             // Create 2 taxi parks.
-            ITaxiPark taxiPark1 = new TaxiPark();
-            ITaxiPark taxiPark2 = new TaxiPark();
+            ITaxiPark taxiPark = new TaxiPark();
 
             // Create different engines to test.
             IEngine V6engine = new FuelEngine(242, 9.8);
@@ -46,27 +45,38 @@ namespace Task1Console
                 .SetSeats(5)
                 .SetWeight(2000);
 
-            taxiPark2.AddCar(taxiCar3);
-            taxiPark2.AddCar(taxiCar2);
-            taxiPark2.AddCar(taxiCar1);
+            taxiPark.AddCar(taxiCar3);
+            taxiPark.AddCar(taxiCar2);
+            taxiPark.AddCar(taxiCar1);
 
-            taxiPark2.AddCar(taxiCar4);
-            taxiPark2.AddCar(electricTaxiCar);
+            taxiPark.AddCar(taxiCar4);
+            taxiPark.AddCar(electricTaxiCar);
+            Console.WriteLine("#################################################################");
+            Console.WriteLine("Searching cars by speed in range from 100 to 300...");
+            Console.WriteLine("#################################################################");
             //Test methods.
             foreach (var item in
-            taxiPark1.SearchBySpeed(100, 300))
+            taxiPark.SearchBySpeed(100, 300))
             {
                 Console.WriteLine(item);
-                Console.WriteLine();
             }
+            Console.WriteLine("#################################################################");
+            Console.WriteLine("Searching cars by speed value equals to 142...");
+            Console.WriteLine("#################################################################");
             foreach (var item in
-            taxiPark1.SearchBySpeed(142))
+            taxiPark.SearchBySpeed(142))
             {
                 Console.WriteLine(item);
-                Console.WriteLine();
             }
-            //taxiPark.SortByConsumption();
-            taxiPark2.SortByConsumption();
+            Console.WriteLine("#################################################################");
+            Console.WriteLine("Cars of the taxi park before sorting");
+            Console.WriteLine("#################################################################");
+            Console.WriteLine(taxiPark);
+            taxiPark.SortByConsumption();
+            Console.WriteLine("#################################################################");
+            Console.WriteLine("Cars of the taxi park after sorting");
+            Console.WriteLine("#################################################################");
+            Console.WriteLine(taxiPark);
             Console.WriteLine();
         }
     }

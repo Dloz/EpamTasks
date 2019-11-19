@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Task1Library.Car;
 using Task1Library.Car.Engine;
 using Task1Library.Exceptions;
@@ -99,6 +100,16 @@ namespace Task1Library.TaxiPark
             }
             car.ParkId = this.Id;
             Cars.Add(car);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (var car in Cars)
+            {
+                stringBuilder.Append(car.ToString());
+            }
+            return stringBuilder.ToString();
         }
 
 

@@ -27,6 +27,6 @@ namespace Task1Library.Car
         /// <summary>
         /// Represents maximum reachable speed of the car.
         /// </summary>
-        double MaxSpeed { get; }
+        int MaxSpeed { get; }
     }
 }
