@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace TextProcessorLibrary
 {
@@ -9,11 +10,15 @@ namespace TextProcessorLibrary
     {
         private IDictionary<string, Action> _actions;
         private IText _text;
+        private ISentence _currentSentence;
 
         private int currentPosition = 0;
 
         public TextParser()
         {
+            _text = new TextModel.Text();
+            _currentSentence = new SentenceModel.Sentence();
+
             _actions = new Dictionary<string, Action>
             {
                 {".", EndOfSentence },
@@ -56,8 +61,19 @@ namespace TextProcessorLibrary
 
         public IText Parse(string str)
         {
-            
+            // If previuos sentence is not ended, merge 2 sentences.
+            Regex endOdSentenceRegex = new Regex(@"(?<=[\.!\?])\s+");
+            var sentences = endOdSentenceRegex.Split(str);
+            foreach (var sentence in sentences)
+            {
+                _text.Sentences.Add(ParseSentence(sentence));
+            }
             return _text;
+        }
+        public ISentence ParseSentence(string str)
+        {
+
+            return _currentSentence;
         }
 
         #region IDisposable Support
@@ -94,6 +110,7 @@ namespace TextProcessorLibrary
             // TODO: uncomment the following line if the finalizer is overridden above.
             // GC.SuppressFinalize(this);
         }
+
         #endregion
     }
 }

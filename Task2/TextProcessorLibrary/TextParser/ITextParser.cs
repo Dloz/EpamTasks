@@ -8,5 +8,6 @@ namespace TextProcessorLibrary
     public interface ITextParser
     {
         IText Parse(string str);
+        ISentence ParseSentence(string str);
     }
 }

@@ -6,6 +6,7 @@ namespace TextProcessorLibrary
 {
     public interface IWord
     {
-        int Length { get; set; }
+        string Value { get; }
+        int Length { get; }
     }
 }

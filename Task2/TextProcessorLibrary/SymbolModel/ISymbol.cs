@@ -6,5 +6,6 @@ namespace TextProcessorLibrary
 {
     public interface ISymbol
     {
+        string Value { get; }
     }
 }

@@ -11,7 +11,9 @@ namespace TextProcessorLibrary
     {
         Simple, // with a '.' symbol at the end.
         Question, // with a '?' symbol at the end.
-        Exclamatory // with a '!' symbol at the end.
+        Exclamatory, // with a '!' symbol at the end.
+
+        None
 
     }
 }

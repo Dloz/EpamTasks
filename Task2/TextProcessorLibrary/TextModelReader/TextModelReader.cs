@@ -7,22 +7,22 @@ namespace TextProcessorLibrary
 {
     public class TextModelReader: IDisposable
     {
-        TextReader _textReader;
+        StreamReader _streamReader;
         // buffer
-        public TextModelReader(TextReader reader)
+        public TextModelReader(StreamReader reader)
         {
-            _textReader = reader;
+            _streamReader = reader;
         }
 
         public string ReadBlock()
         {
             StringBuilder output;
-            using (_textReader)
+            using (_streamReader)
             {
                 output = new StringBuilder();
                 for (int i = 0; i < 4; i++)
                 {
-                    output.Append(_textReader.ReadLine());
+                    output.Append(_streamReader.ReadLine());
                 }
             }
             return output.ToString();
@@ -30,12 +30,13 @@ namespace TextProcessorLibrary
 
         public IEnumerable<string> ReadAllText()
         {
+            // exception handling.
             yield return ReadBlock();
         }
 
         public void Dispose()
         {
-            ((IDisposable)_textReader).Dispose();
+            ((IDisposable)_streamReader).Dispose();
         }
     }
 }

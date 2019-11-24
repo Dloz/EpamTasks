@@ -18,5 +18,9 @@ namespace TextProcessorLibrary
         /// Represents actual sentence.
         /// </summary>
         ICollection<IWord> Words { get; }
+        /// <summary>
+        /// Represents punctiation sign at the end of sentence.
+        /// </summary>
+        ISymbol Symbol { get; }
     }
 }
