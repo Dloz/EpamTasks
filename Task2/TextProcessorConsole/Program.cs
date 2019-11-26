@@ -9,15 +9,13 @@ namespace TextProcessorConsole
     {
         static void Main(string[] args)
         {
-            StreamReader stream = new StreamReader(new FileStream("", FileMode.Open));
+            //StreamReader stream = new StreamReader(new FileStream("", FileMode.Open));
             IText text = new Text();
+            string test = "Some, sentence, \"some quote\" and: asadf!";
 
             using (var textParser = new TextParser())
             {
-                using (var textModelReader = new TextModelReader(stream))
-                {
-                    text = textParser.Parse(textModelReader.ReadBlock());
-                }
+                text = textParser.Parse(test);
             }
             
         }
