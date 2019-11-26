@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TextProcessorLibrary.SymbolModel;
 
 namespace TextProcessorLibrary.SentenceModel
 {
@@ -17,7 +18,7 @@ namespace TextProcessorLibrary.SentenceModel
         /// <summary>
         /// Represents punctuation sign of the sentence.
         /// </summary>
-        public ISymbol PunctuationSign { get; set; }
+        public ISymbol PunctuationSign => Items.Last() as ISymbol;
         /// <summary>
         /// Represents amount of words in sentence.
         /// </summary>

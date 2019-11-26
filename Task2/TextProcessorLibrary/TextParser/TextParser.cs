@@ -22,108 +22,117 @@ namespace TextProcessorLibrary
         private string _sentenceToParse = "";
 
         // Positions of sentence parser.
-        private int currentPosition = 0;
-        private int previousPosition = 0;
+        private int _currentPosition = 0;
+        private int _previousPosition = 0;
 
         public TextParser()
         {
             _text = new TextModel.Text();
-            _currentSentence = new SentenceModel.Sentence();
+            _currentSentence = new Sentence();
 
             _actions = new Dictionary<char, Action>
             {
-                {'.', EndOfSentence },
-                {'!', EndOfSentence },
-                {'?', EndOfSentence },
+                {'.', endOfSentenceAction },
+                {'!', endOfSentenceAction },
+                {'?', endOfSentenceAction },
                   
-                {' ', SpaceAction },
-                {',', EndOfWordAction },
-                {':', EndOfWordAction },
+                {' ', spaceAction },
+                {',', endOfWordAction },
+                {':', endOfWordAction },
                   
-                {'-', DashAction },
+                {'-', dashAction },
                  
-                {'\"', QuoteAction }
+                {'\"', quoteAction }
 
             };
         }
 
-        private void SpaceAction()
-        {
-            string word = _sentenceToParse.Substring(previousPosition, currentPosition - previousPosition);
-            _currentSentence.Items.Add(parseWord(word));
-            _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition].ToString()));
-
-            previousPosition = currentPosition + 1;
-        }
-
-        private void QuoteAction()
-        {
-            //int endPos = 0;
-            //for (int i = currentPosition; i < _sentenceToParse.Length; i++)
-            //{
-            //    if (_sentenceToParse[i] == ' ')
-            //    {
-            //        string word = _sentenceToParse.Substring(currentPosition, i - currentPosition);
-            //        _currentSentence.Items.Add(parseWord(word));
-            //        _currentSentence.Items.Add(new Symbol(_sentenceToParse[i].ToString()));
-            //        continue;
-            //    }
-
-            //    if (_sentenceToParse[i] == '\"')
-            //    {
-            //        return;
-            //    }
-            //}
-
-            if (_sentenceToParse[currentPosition - 1] == ' ')
-            {
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition].ToString()));
-            }
-            if (_sentenceToParse[currentPosition + 1] == ' ')
-            {
-                string word = _sentenceToParse.Substring(previousPosition, currentPosition - previousPosition);
-                _currentSentence.Items.Add(parseWord(word));
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition].ToString()));
-
-                updatePositions();
-            }
-        }
-
         private void updatePositions()
         {
-            previousPosition = currentPosition + 1;
-            currentPosition++;
+            _previousPosition = _currentPosition + 1;
+            //currentPosition++;
         }
 
-        private void DashAction()
+        private void spaceAction()
         {
-            if (_sentenceToParse[currentPosition-1] == ' ' && _sentenceToParse[currentPosition + 1] == ' ')
+            // If there are symbol before current position, then avoid redundant word parsing.
+            if (Regex.IsMatch(_sentenceToParse[_currentPosition - 1].ToString(), @"\W"))
             {
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition].ToString()));
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition-1].ToString()));
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition+1].ToString()));
+                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+                updatePositions();
+                return;
+            }
+            string word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
+            _currentSentence.Items.Add(parseWord(word));
+            _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+
+            updatePositions();
+        }
+
+        private void quoteAction()
+        {
+            if (_sentenceToParse[_currentPosition - 1] == ' ')
+            {
+                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+                updatePositions();
+            }
+            if (_sentenceToParse[_currentPosition + 1] == ' ')
+            {
+                string word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
+                _currentSentence.Items.Add(parseWord(word));
+                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+
+                updatePositions(); // TODO: at this moment previousPos > currentPos
             }
         }
 
-        private void EndOfWordAction()
+        private void dashAction()
         {
-            if (_sentenceToParse[currentPosition + 1] == ' ')
+            if (_sentenceToParse[_currentPosition - 1] == ' ' && _sentenceToParse[_currentPosition + 1] == ' ')
             {
-                string word = _sentenceToParse.Substring(previousPosition, currentPosition - previousPosition);
-                _currentSentence.Items.Add(parseWord(word));
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition].ToString()));
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition + 1].ToString()));
-
-                currentPosition++;
+                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
                 updatePositions();
             }
         }
 
-        private void EndOfSentence()
+        private void endOfWordAction()
         {
-            string word = _sentenceToParse.Substring(previousPosition, currentPosition - previousPosition);
+            // If there are symbol before current position, then avoid redundant word parsing.
+            if (Regex.IsMatch(_sentenceToParse[_currentPosition - 1].ToString(), @"\W"))
+            {
+                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+                updatePositions();
+                return;
+            }
+            if (_sentenceToParse[_currentPosition + 1] == ' ')
+            {
+                string word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
+                _currentSentence.Items.Add(parseWord(word));
+                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition + 1].ToString()));
+
+                _currentPosition++;
+                updatePositions();
+            }
+        }
+
+        private void endOfSentenceAction()
+        {
+            // If there are symbol before current position, then avoid redundant word parsing.
+            if (Regex.IsMatch(_sentenceToParse[_currentPosition - 1].ToString(), @"\W"))
+            {
+                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+                updatePositions();
+                return;
+            }
+            string word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
             _currentSentence.Items.Add(parseWord(word));
-            _currentSentence.Items.Add(new Symbol(_sentenceToParse[currentPosition].ToString()));
+            _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+        }
+
+        private IWord parseWord(string word)
+        {
+            return new Word(word);
         }
 
         public IText Parse(string str)
@@ -149,6 +158,8 @@ namespace TextProcessorLibrary
                 _sentencePending = sentences.Last();
                 sentences = sentences.Where((val, idx) => idx != lastIndex).ToArray(); // delete last sentence from array.
             }
+
+            // Parse sentnces from array and add them to the text.
             foreach (var sentence in sentences)
             {
                 _text.Sentences.Add(ParseSentence(sentence));
@@ -164,27 +175,26 @@ namespace TextProcessorLibrary
             _sentenceToParse = Regex.Replace(_sentenceToParse, @"\t+", " ");
 
             // Create object of sentence to return
-            _currentSentence = new SentenceModel.Sentence();
+            _currentSentence = new Sentence();
 
             // Refresh posistions of the parser.
-            currentPosition = 0;
-            previousPosition = 0;
+            _currentPosition = 0;
+            _previousPosition = 0;
 
-            for (currentPosition = 0; currentPosition < _sentenceToParse.Length; currentPosition++)
+            // Iterate through sentence symbol-wise and invoke actions.
+            for (_currentPosition = 0; _currentPosition < _sentenceToParse.Length; _currentPosition++)
             {
                 // \"([a-zA-Z\s\,]+)\" - Regex to parse quote.
-                if (!Regex.IsMatch(_sentenceToParse[currentPosition].ToString(), @"\w"))
-                {
-                    _actions[_sentenceToParse[currentPosition]]();
+                if (!Regex.IsMatch(_sentenceToParse[_currentPosition].ToString(), @"\w"))
+                { 
+                    // When parser meets some symbol, action which mapped to the symbol would be invoked.
+                    _actions[_sentenceToParse[_currentPosition]](); 
                 }
             }
             return _currentSentence;
         }
 
-        private IWord parseWord(string word)
-        {
-            return new Word(word);
-        }
+
 
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls

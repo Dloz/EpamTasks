@@ -11,7 +11,7 @@ namespace TextProcessorConsole
         {
             //StreamReader stream = new StreamReader(new FileStream("", FileMode.Open));
             IText text = new Text();
-            string test = "Some, sentence, \"some quote\" and: asadf!";
+            string test = "Some, sen-tence, \"some - quote\" and: asadf!";
 
             using (var textParser = new TextParser())
             {
