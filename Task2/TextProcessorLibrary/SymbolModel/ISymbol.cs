@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TextProcessorLibrary.SentenceModel;
 
 namespace TextProcessorLibrary
 {
-    public interface ISymbol
+    /// <summary>
+    /// Represents symbols in the text.
+    /// </summary>
+    public interface ISymbol: ISentenceItem
     {
-        string Value { get; }
+
     }
 }

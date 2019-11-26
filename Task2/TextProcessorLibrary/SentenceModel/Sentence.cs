@@ -1,32 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace TextProcessorLibrary.SentenceModel
 {
-    class Sentence : ISentence
+    /// <summary>
+    /// Represents one sentence in the text.
+    /// </summary>
+    internal class Sentence : ISentence
     {
-        public int WordsCount => Words.Count;
-
+        /// <summary>
+        /// Represents words and symbols at the sentence.
+        /// </summary>
+        public IList<ISentenceItem> Items { get; set; }
+        /// <summary>
+        /// Represents punctuation sign of the sentence.
+        /// </summary>
+        public ISymbol PunctuationSign { get; set; }
+        /// <summary>
+        /// Represents amount of words in sentence.
+        /// </summary>
+        public int WordsCount => Items.Where(i => i is IWord).Count();
+        /// <summary>
+        /// Represents type of the sentence.
+        /// </summary>
         public SentenceType Type => detectSentenceType();
-
-        public ICollection<IWord> Words { get; set; }
-
-        public ISymbol Symbol { get; set; }
 
         public Sentence()
         {
-
+            Items = new List<ISentenceItem>();
         }
 
-        public Sentence(ICollection<IWord> words)
+        public Sentence(IList<ISentenceItem> items)
         {
-            Words = words;
+            Items = items;
         }
 
         private SentenceType detectSentenceType()
         {
-            switch (Symbol.Value[0].ToString())
+            switch (PunctuationSign.Value[0].ToString())
             {
                 case ".":
                     return SentenceType.Simple;

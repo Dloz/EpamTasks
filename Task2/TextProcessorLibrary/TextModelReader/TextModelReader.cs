@@ -5,15 +5,21 @@ using System.Text;
 
 namespace TextProcessorLibrary
 {
+    /// <summary>
+    /// Represents set of operations to read from the stream.
+    /// </summary>
     public class TextModelReader: IDisposable
     {
-        StreamReader _streamReader;
-        // buffer
+        private StreamReader _streamReader;
         public TextModelReader(StreamReader reader)
         {
             _streamReader = reader;
         }
 
+        /// <summary>
+        /// Reads block of data.
+        /// </summary>
+        /// <returns>String value of the data.</returns>
         public string ReadBlock()
         {
             StringBuilder output;
@@ -28,6 +34,10 @@ namespace TextProcessorLibrary
             return output.ToString();
         }
 
+        /// <summary>
+        /// Read whole text block by block.
+        /// </summary>
+        /// <returns>Iterator of text blocks.</returns>
         public IEnumerable<string> ReadAllText()
         {
             // exception handling.

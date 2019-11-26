@@ -4,8 +4,14 @@ using System.Text;
 
 namespace TextProcessorLibrary.TextModel
 {
-    class Text : IText
+    /// <summary>
+    /// Represents whole text.
+    /// </summary>
+    public class Text : IText
     {
-        public ICollection<ISentence> Sentences { get; internal set; }
+        /// <summary>
+        /// Represents sentences in the text.
+        /// </summary>
+        public IList<ISentence> Sentences { get; internal set; }
     }
 }

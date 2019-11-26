@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TextProcessorLibrary.SentenceModel;
 
 namespace TextProcessorLibrary
 {
+    /// <summary>
+    /// Represents one sentence in the text.
+    /// </summary>
     public interface ISentence
     {
         /// <summary>
@@ -15,12 +19,12 @@ namespace TextProcessorLibrary
         /// </summary>
         SentenceType Type { get; }
         /// <summary>
-        /// Represents actual sentence.
+        /// Represents words and symbols at the sentence.
         /// </summary>
-        ICollection<IWord> Words { get; }
+        IList<ISentenceItem> Items { get; }
         /// <summary>
-        /// Represents punctiation sign at the end of sentence.
+        /// Represents punctuation sign of the sentence.
         /// </summary>
-        ISymbol Symbol { get; }
+        ISymbol PunctuationSign { get; }
     }
 }
