@@ -9,13 +9,19 @@ namespace TextProcessorConsole
     {
         static void Main(string[] args)
         {
-            //StreamReader stream = new StreamReader(new FileStream("", FileMode.Open));
+            var configuration = new GlobalConfiguration();
+            configuration["fileName"] = "../../../text.txt";
+
+            var stream = new StreamReader(new FileStream(configuration["fileName"], FileMode.Open));
             IText text = new Text();
-            string test = "Some, sen-tence, \"some - quote\" and: asadf!";
+            //string test = "Some, sen-tence, \"some - quote\" and: asadf!";
 
             using (var textParser = new TextParser())
             {
-                text = textParser.Parse(test);
+                using (var textReader = new TextModelReader(stream))
+                {
+                    text = textParser.ParseText(textReader.ReadAllText());
+                }
             }
             
         }

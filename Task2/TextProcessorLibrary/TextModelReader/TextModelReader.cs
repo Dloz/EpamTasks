@@ -23,13 +23,10 @@ namespace TextProcessorLibrary
         public string ReadBlock()
         {
             StringBuilder output;
-            using (_streamReader)
+            output = new StringBuilder();
+            for (int i = 0; i < 4; i++)
             {
-                output = new StringBuilder();
-                for (int i = 0; i < 4; i++)
-                {
-                    output.Append(_streamReader.ReadLine());
-                }
+                output.Append(_streamReader.ReadLine());
             }
             return output.ToString();
         }
@@ -38,10 +35,20 @@ namespace TextProcessorLibrary
         /// Read whole text block by block.
         /// </summary>
         /// <returns>Iterator of text blocks.</returns>
-        public IEnumerable<string> ReadAllText()
+        public string ReadAllText()
         {
             // exception handling.
-            yield return ReadBlock();
+            StringBuilder output;
+            using (_streamReader)
+            {
+                output = new StringBuilder();
+                while (!_streamReader.EndOfStream)
+                {
+                    output.Append(ReadBlock());
+                }
+            }
+
+            return output.ToString();
         }
 
         public void Dispose()

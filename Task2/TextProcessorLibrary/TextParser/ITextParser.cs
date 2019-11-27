@@ -7,7 +7,7 @@ namespace TextProcessorLibrary
 {
     public interface ITextParser
     {
-        IText Parse(string str);
+        IText ParseText(string str);
         ISentence ParseSentence(string str);
     }
 }

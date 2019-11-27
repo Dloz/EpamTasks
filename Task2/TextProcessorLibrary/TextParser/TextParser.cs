@@ -135,7 +135,7 @@ namespace TextProcessorLibrary
             return new Word(word);
         }
 
-        public IText Parse(string str)
+        public IText ParseText(string str)
         {
             _text = new TextModel.Text();
 

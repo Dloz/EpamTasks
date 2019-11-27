@@ -38,6 +38,16 @@ namespace TextProcessorLibrary.SentenceModel
             Items = items;
         }
 
+        public override string ToString()
+        {
+            StringBuilder output = new StringBuilder();
+            foreach (var item in Items)
+            {
+                output.Append(item);
+            }
+            return output.ToString();
+        }
+
         private SentenceType detectSentenceType()
         {
             switch (PunctuationSign.Value[0].ToString())
@@ -52,5 +62,7 @@ namespace TextProcessorLibrary.SentenceModel
                     return SentenceType.None;
             }
         }
+
+        
     }
 }
