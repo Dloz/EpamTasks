@@ -7,6 +7,9 @@ namespace TextProcessorLibrary
 {
     public interface IWord: ISentenceItem
     {
-        int Length { get; }
+        /// <summary>
+        /// Returns bool value whether word started with consonant letter or not.
+        /// </summary>
+        bool IsStartedWithConsonant { get; }
     }
 }

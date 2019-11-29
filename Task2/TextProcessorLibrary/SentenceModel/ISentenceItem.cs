@@ -13,5 +13,10 @@ namespace TextProcessorLibrary.SentenceModel
         /// Represents string value of the part of the sentence.
         /// </summary>
         string Value { get; }
+        /// <summary>
+        /// Represents type of sentence item(Word, Symbol etc.)
+        /// </summary>
+        SentenceItemType Type { get; }
+        int Length { get; }
     }
 }

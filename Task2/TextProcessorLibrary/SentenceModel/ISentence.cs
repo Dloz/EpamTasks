@@ -22,9 +22,5 @@ namespace TextProcessorLibrary
         /// Represents words and symbols at the sentence.
         /// </summary>
         IList<ISentenceItem> Items { get; }
-        /// <summary>
-        /// Represents punctuation sign of the sentence.
-        /// </summary>
-        ISymbol PunctuationSign { get; }
     }
 }

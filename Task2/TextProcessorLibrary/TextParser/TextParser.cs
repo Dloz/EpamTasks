@@ -13,7 +13,7 @@ namespace TextProcessorLibrary
     /// <summary>
     /// Represents parser which converts from string type to IText type.
     /// </summary>
-    public class TextParser : ITextParser, IDisposable
+    public class TextParser : ITextParser
     {
         private IDictionary<char, Action> _actions;
         private IText _text;
@@ -144,10 +144,10 @@ namespace TextProcessorLibrary
 
             // if sentence from previous block ready to split, split them.
             // If previuos sentence is not ended, merge 2 sentences.
-            if (_sentencePending != "")
+            if (!string.IsNullOrEmpty(_sentencePending))
             {
                 sentences[0] = _sentencePending + sentences.First();
-                _sentencePending = "";
+                _sentencePending = string.Empty;
             }
             
             // if last sentence is not complete.
@@ -166,7 +166,7 @@ namespace TextProcessorLibrary
             }
             return _text;
         }
-        public ISentence ParseSentence(string str)
+        public ISentence ParseSentence(string str)// make private
         {
             //Make the string to be seen anywhere from the class.
             _sentenceToParse = str;
@@ -184,7 +184,6 @@ namespace TextProcessorLibrary
             // Iterate through sentence symbol-wise and invoke actions.
             for (_currentPosition = 0; _currentPosition < _sentenceToParse.Length; _currentPosition++)
             {
-                // \"([a-zA-Z\s\,]+)\" - Regex to parse quote.
                 if (!Regex.IsMatch(_sentenceToParse[_currentPosition].ToString(), @"\w"))
                 { 
                     // When parser meets some symbol, action which mapped to the symbol would be invoked.
@@ -193,44 +192,5 @@ namespace TextProcessorLibrary
             }
             return _currentSentence;
         }
-
-
-
-        #region IDisposable Support
-        private bool disposedValue = false; // To detect redundant calls
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-                    // TODO: dispose managed state (managed objects).
-                }
-
-                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-                // TODO: set large fields to null.
-
-                disposedValue = true;
-            }
-        }
-
-        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-        // ~TextParser()
-        // {
-        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-        //   Dispose(false);
-        // }
-
-        // This code added to correctly implement the disposable pattern.
-        public void Dispose()
-        {
-            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-            Dispose(true);
-            // TODO: uncomment the following line if the finalizer is overridden above.
-            // GC.SuppressFinalize(this);
-        }
-
-        #endregion
     }
 }

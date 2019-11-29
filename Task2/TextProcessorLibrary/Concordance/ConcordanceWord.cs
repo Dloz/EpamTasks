@@ -7,6 +7,7 @@ namespace TextProcessorLibrary.Concordance
 {
     class ConcordanceWord : Word
     {
-            
+        IList<int> Lines { get; set; } // Icoll
+        int Count { get; set; }
     }
 }

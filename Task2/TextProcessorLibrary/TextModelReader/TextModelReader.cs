@@ -8,7 +8,7 @@ namespace TextProcessorLibrary
     /// <summary>
     /// Represents set of operations to read from the stream.
     /// </summary>
-    public class TextModelReader: IDisposable
+    public class TextModelReader
     {
         private StreamReader _streamReader;
         public TextModelReader(StreamReader reader)
@@ -49,11 +49,6 @@ namespace TextProcessorLibrary
             }
 
             return output.ToString();
-        }
-
-        public void Dispose()
-        {
-            ((IDisposable)_streamReader).Dispose();
         }
     }
 }

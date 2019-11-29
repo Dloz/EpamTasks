@@ -18,11 +18,11 @@ namespace TextProcessorLibrary.SentenceModel
         /// <summary>
         /// Represents punctuation sign of the sentence.
         /// </summary>
-        public ISymbol PunctuationSign => Items.Last() as ISymbol;
+        public ISymbol PunctuationSign => Items.Last() as ISymbol; // private
         /// <summary>
         /// Represents amount of words in sentence.
         /// </summary>
-        public int WordsCount => Items.Where(i => i is IWord).Count();
+        public int WordsCount => Items.Where(i => i.Type == SentenceItemType.Word).Count();
         /// <summary>
         /// Represents type of the sentence.
         /// </summary>
