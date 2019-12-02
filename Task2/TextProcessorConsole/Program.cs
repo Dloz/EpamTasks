@@ -8,6 +8,7 @@ using TextProcessorLibrary.Concordance.Parser;
 using TextProcessorLibrary.Parser;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using TextProcessorLibrary.Configuration;
 using TextProcessorLibrary.TextSerializer;
 using TextProcessorLibrary.TextModelIO;
 
@@ -21,7 +22,7 @@ namespace TextProcessorConsole
             {
                 IText text = new Text();
                 IConcordance concordance = new Concordance();
-                ConcordanceParser concordanceParser = new ConcordanceParser();
+                var concordanceParser = new ConcordanceParser();
                 var configuration = new GlobalConfiguration();
 
                 if (args.Length != 0)
@@ -30,45 +31,38 @@ namespace TextProcessorConsole
                 }
                 else
                 {
-                    using (var reader = new StreamReader("../../../config.json"))
-                    {
-
-                        string json = reader.ReadToEnd();
-                        configuration = JsonConvert.DeserializeObject<GlobalConfiguration>(json);
-                    }
+                    using var reader = new StreamReader("../../../config.json");
+                    var json = reader.ReadToEnd();
+                    configuration = JsonConvert.DeserializeObject<GlobalConfiguration>(json);
                 }
 
 
                 foreach (var fileName in configuration.FileNames)
                 {
-                    using (var stream = new StreamReader(new FileStream(fileName, FileMode.Open)))
-                    {
-                        var textParser = new TextParser();
-                        var textReader = new TextModelReader(stream);
-                        text = textParser.ParseText(textReader.ReadAllText());
-                    }
+                    using var stream = new StreamReader(new FileStream(fileName, FileMode.Open));
+                    var textParser = new TextParser();
+                    var textReader = new TextModelReader(stream);
+                    text = textParser.ParseText(textReader.ReadAllText());
                 }
 
                 foreach (var fileName in configuration.FileNames)
                 {
-                    using (var stream = new StreamReader(new FileStream(fileName, FileMode.Open)))
-                    {
-                        var textParser = new TextParser();
-                        var textReader = new TextModelReader(stream);
-                        concordance = concordanceParser.ParseText(textReader.ReadAllText());
-                    }
+                    using var stream = new StreamReader(new FileStream(fileName, FileMode.Open));
+                    var textParser = new TextParser();
+                    var textReader = new TextModelReader(stream);
+                    concordance = concordanceParser.ParseText(textReader.ReadAllText());
                 }
 
                 var jsonText = JsonTextSerializer.Serialize(text);
                 var jsonConc = JsonTextSerializer.Serialize(concordance);
 
-                using (StreamWriter writer = new StreamWriter("../../../text.json"))
+                using (var writer = new StreamWriter("../../../text.json"))
                 {
                     var textModelWriter = new TextModelWriter(writer);
                     textModelWriter.Write(jsonText);
                 }
 
-                using (StreamWriter writer = new StreamWriter("../../../concordance.json"))
+                using (var writer = new StreamWriter("../../../concordance.json"))
                 {
                     var textModelWriter = new TextModelWriter(writer);
                     textModelWriter.Write(jsonConc);

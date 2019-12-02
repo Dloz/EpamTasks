@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using TextProcessorLibrary.SentenceModel;
 using TextProcessorLibrary.SymbolModel;
+using TextProcessorLibrary.TextModel;
 using TextProcessorLibrary.WordModel;
 
 namespace TextProcessorLibrary.Parser
@@ -15,12 +16,12 @@ namespace TextProcessorLibrary.Parser
     /// </summary>
     public class TextParser : ITextParser
     {
-        private const char dotSign = '.';
-        private const char questionSign = '?';
-        private const char exclamatorySign = '!';
+        private const char DotSign = '.';
+        private const char QuestionSign = '?';
+        private const char ExclamatorySign = '!';
 
-        private string _emptyStringExceptionMessage = "String passed through is null or empty";
-        private IDictionary<char, Action> _actions;
+        private const string EmptyStringExceptionMessage = "String passed through is null or empty";
+        private readonly IDictionary<char, Action> _actions;
         private IText _text;
         private ISentence _currentSentence;
         private string _sentencePending = "";
@@ -73,7 +74,7 @@ namespace TextProcessorLibrary.Parser
                 updatePositions();
                 return;
             }
-            string word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
+            var word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
             _currentSentence.Items.Add(parseWord(word));
             _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
 
@@ -87,23 +88,20 @@ namespace TextProcessorLibrary.Parser
                 _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
                 updatePositions();
             }
-            if (_sentenceToParse[_currentPosition + 1] == ' ')
-            {
-                string word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
-                _currentSentence.Items.Add(parseWord(word));
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
 
-                updatePositions();
-            }
+            if (_sentenceToParse[_currentPosition + 1] != ' ') return;
+            var word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
+            _currentSentence.Items.Add(parseWord(word));
+            _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+
+            updatePositions();
         }
 
         private void dashAction()
         {
-            if (_sentenceToParse[_currentPosition - 1] == ' ' && _sentenceToParse[_currentPosition + 1] == ' ')
-            {
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
-                updatePositions();
-            }
+            if (_sentenceToParse[_currentPosition - 1] != ' ' || _sentenceToParse[_currentPosition + 1] != ' ') return;
+            _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+            updatePositions();
         }
 
         private void endOfWordAction()
@@ -115,16 +113,15 @@ namespace TextProcessorLibrary.Parser
                 updatePositions();
                 return;
             }
-            if (_sentenceToParse[_currentPosition + 1] == ' ')
-            {
-                string word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
-                _currentSentence.Items.Add(parseWord(word));
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
-                _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition + 1].ToString()));
 
-                _currentPosition++;
-                updatePositions();
-            }
+            if (_sentenceToParse[_currentPosition + 1] != ' ') return;
+            var word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
+            _currentSentence.Items.Add(parseWord(word));
+            _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
+            _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition + 1].ToString()));
+
+            _currentPosition++;
+            updatePositions();
         }
 
         private void endOfSentenceAction()
@@ -136,7 +133,7 @@ namespace TextProcessorLibrary.Parser
                 updatePositions();
                 return;
             }
-            string word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
+            var word = _sentenceToParse.Substring(_previousPosition, _currentPosition - _previousPosition);
             _currentSentence.Items.Add(parseWord(word));
             _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
         }
@@ -161,12 +158,12 @@ namespace TextProcessorLibrary.Parser
         {
             if (string.IsNullOrEmpty(str))
             {
-                throw new ArgumentException(_emptyStringExceptionMessage);
+                throw new ArgumentException(EmptyStringExceptionMessage);
             }
 
             _text = new TextModel.Text();
 
-            Regex endOdSentenceRegex = new Regex(@"(?<=[\.!\?])\s+");
+            var endOdSentenceRegex = new Regex(@"(?<=[\.!\?])\s+");
             var sentences = endOdSentenceRegex.Split(str);
             var completeSentences = new List<string>();
 
@@ -180,9 +177,9 @@ namespace TextProcessorLibrary.Parser
             
             // if last sentence is not complete.
             // then delete last sentence from array and add it to temporary variable.
-            if (!sentences.Last().EndsWith(dotSign) 
-                && !sentences.Last().EndsWith(exclamatorySign) 
-                && !sentences.Last().EndsWith(questionSign))
+            if (!sentences.Last().EndsWith(DotSign) 
+                && !sentences.Last().EndsWith(ExclamatorySign) 
+                && !sentences.Last().EndsWith(QuestionSign))
             {
                 //int lastIndex = Array.IndexOf(sentences, sentences.Last());
                 _sentencePending = sentences.Last();
@@ -200,7 +197,7 @@ namespace TextProcessorLibrary.Parser
         {
             if (string.IsNullOrEmpty(str))
             {
-                throw new ArgumentException(_emptyStringExceptionMessage);
+                throw new ArgumentException(EmptyStringExceptionMessage);
             }
 
             //Make the string to be seen anywhere from the class.

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TextProcessorLibrary.SentenceModel;
+﻿using TextProcessorLibrary.SentenceModel;
 
-namespace TextProcessorLibrary
+namespace TextProcessorLibrary.SymbolModel
 {
     /// <summary>
     /// Represents symbols in the text.

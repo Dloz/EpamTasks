@@ -9,7 +9,7 @@ namespace TextProcessorLibrary.WordModel
 {
     public class Word : IWord
     {
-        private string _emptyStringExceptionMessage = "String passed through is null or empty";
+        private const string EmptyStringExceptionMessage = "String passed through is null or empty";
 
         /// <summary>
         /// Represents length of the word.
@@ -18,7 +18,7 @@ namespace TextProcessorLibrary.WordModel
         /// <summary>
         /// Represents string value of the part of the sentence.
         /// </summary>
-        public string Value { get; set; }
+        public string Value { get; }
         /// <summary>
         /// Represents word type of sentence item
         /// </summary>
@@ -38,7 +38,7 @@ namespace TextProcessorLibrary.WordModel
         {
             if (string.IsNullOrEmpty(word))
             {
-                throw new ArgumentException(_emptyStringExceptionMessage);
+                throw new ArgumentException(EmptyStringExceptionMessage);
             }
             Value = word;
         }
@@ -55,9 +55,9 @@ namespace TextProcessorLibrary.WordModel
 
         public override bool Equals(object obj)
         {
-            if (obj is Word)
+            if (obj is Word word)
             {
-                return Value.Equals(((IWord)obj).Value);
+                return Value.Equals(word.Value);
             }
             return base.Equals(obj);
         }

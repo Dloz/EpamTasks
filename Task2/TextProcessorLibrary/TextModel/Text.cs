@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TextProcessorLibrary.SentenceModel;
 
 namespace TextProcessorLibrary.TextModel
 {

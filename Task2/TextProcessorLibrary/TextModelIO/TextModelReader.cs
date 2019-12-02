@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
-namespace TextProcessorLibrary
+namespace TextProcessorLibrary.TextModelIO
 {
     /// <summary>
     /// Represents set of operations to read from the stream.
     /// </summary>
     public class TextModelReader
     {
-        private StreamReader _streamReader;
+        private readonly StreamReader _streamReader;
         public TextModelReader(StreamReader reader)
         {
             _streamReader = reader;

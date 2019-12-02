@@ -7,7 +7,7 @@ namespace TextProcessorLibrary.TextModelIO
 {
     public class TextModelWriter
     {
-        private StreamWriter _streamWriter;
+        private readonly StreamWriter _streamWriter;
         public TextModelWriter(StreamWriter writer)
         {
             _streamWriter = writer;

@@ -5,9 +5,9 @@ using TextProcessorLibrary.SentenceModel;
 
 namespace TextProcessorLibrary.SymbolModel
 {
-    class Symbol : ISymbol
+    internal class Symbol : ISymbol
     {
-        private string _emptyStringExceptionMessage = "String passed through is null or empty";
+        private const string EmptyStringExceptionMessage = "String passed through is null or empty";
 
         /// <summary>
         /// Represents string value of the part of the sentence.
@@ -26,7 +26,7 @@ namespace TextProcessorLibrary.SymbolModel
         {
             if (string.IsNullOrEmpty(value))
             {
-                throw new ArgumentException(_emptyStringExceptionMessage);
+                throw new ArgumentException(EmptyStringExceptionMessage);
             }
 
             Value = value;

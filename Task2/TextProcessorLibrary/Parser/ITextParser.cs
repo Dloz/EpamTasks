@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using TextProcessorLibrary.SentenceModel;
+using TextProcessorLibrary.TextModel;
 
 namespace TextProcessorLibrary.Parser
 {

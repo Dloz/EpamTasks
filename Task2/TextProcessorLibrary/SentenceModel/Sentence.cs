@@ -14,19 +14,19 @@ namespace TextProcessorLibrary.SentenceModel
         /// <summary>
         /// Represents words and symbols at the sentence.
         /// </summary>
-        public IList<ISentenceItem> Items { get; set; }
+        public IList<ISentenceItem> Items { get; }
         /// <summary>
         /// Represents punctuation sign of the sentence.
         /// </summary>
-        public ISymbol PunctuationSign => Items.Last() as ISymbol; // private
+        private ISymbol PunctuationSign => Items.Last() as ISymbol; // private
         /// <summary>
         /// Represents amount of words in sentence.
         /// </summary>
-        public int WordsCount => Items.Where(i => i.Type == SentenceItemType.Word).Count();
+        public int WordsCount => Items.Count(i => i.Type == SentenceItemType.Word);
         /// <summary>
         /// Represents type of the sentence.
         /// </summary>
-        public SentenceType Type => detectSentenceType();
+        public SentenceType Type { get; }
 
         public Sentence()
         {
@@ -35,16 +35,13 @@ namespace TextProcessorLibrary.SentenceModel
 
         public Sentence(IList<ISentenceItem> items)
         {
-            if (items == null)
-            {
-                throw new ArgumentException("Sentence items is null.");
-            }
-            Items = items;
+            Items = items ?? throw new ArgumentException("Sentence items is null.");
+            Type = detectSentenceType();
         }
 
         public override string ToString()
         {
-            StringBuilder output = new StringBuilder();
+            var output = new StringBuilder();
             foreach (var item in Items)
             {
                 output.Append(item);

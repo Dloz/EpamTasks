@@ -6,8 +6,7 @@ namespace TextProcessorLibrary.Concordance
 {
     public class Concordance : IConcordance
     {
-        
-        private string _emptyStringExceptionMessage = "String passed through is null or empty";
+        private const string EmptyStringExceptionMessage = "String passed through is null or empty";
         public SortedDictionary<string, ConcordanceWord> Words { get; set; }
 
         public Concordance()
@@ -19,7 +18,7 @@ namespace TextProcessorLibrary.Concordance
         {
             if (string.IsNullOrEmpty(key))
             {
-                throw new ArgumentException(_emptyStringExceptionMessage);
+                throw new ArgumentException(EmptyStringExceptionMessage);
             }
 
             if (!Words.ContainsKey(key))
@@ -38,10 +37,10 @@ namespace TextProcessorLibrary.Concordance
         {
             if (string.IsNullOrEmpty(word))
             {
-                throw new ArgumentException(_emptyStringExceptionMessage);
+                throw new ArgumentException(EmptyStringExceptionMessage);
             }
-            var sb = new StringBuilder(word);
-            sb[0] = char.ToUpper(word[0]);
+            // Capitalize first letters of words.
+            var sb = new StringBuilder(word) {[0] = char.ToUpper(word[0])};
             word = sb.ToString();
 
             if (Words.ContainsKey(word))

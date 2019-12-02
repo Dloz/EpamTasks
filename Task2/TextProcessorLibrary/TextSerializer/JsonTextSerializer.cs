@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using TextProcessorLibrary.Concordance;
+using TextProcessorLibrary.TextModel;
 
 namespace TextProcessorLibrary.TextSerializer
 {

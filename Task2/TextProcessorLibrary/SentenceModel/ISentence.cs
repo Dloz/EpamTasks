@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TextProcessorLibrary.SentenceModel;
+﻿using System.Collections.Generic;
 
-namespace TextProcessorLibrary
+namespace TextProcessorLibrary.SentenceModel
 {
     /// <summary>
     /// Represents one sentence in the text.

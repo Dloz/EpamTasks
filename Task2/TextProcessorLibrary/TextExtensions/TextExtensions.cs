@@ -5,6 +5,9 @@ using TextProcessorLibrary;
 using System.Text;
 using TextProcessorLibrary.Parser;
 using System.Text.RegularExpressions;
+using TextProcessorLibrary.SentenceModel;
+using TextProcessorLibrary.TextModel;
+using TextProcessorLibrary.WordModel;
 
 namespace TextProcessorLibrary.TextExtensions
 {
@@ -29,14 +32,12 @@ namespace TextProcessorLibrary.TextExtensions
             var output = new List<IWord>();
             foreach (var sentence in text.Sentences)
             {
-                if (sentence.Type == SentenceType.Question)
+                if (sentence.Type != SentenceType.Question) continue;
+                foreach (var item in sentence.Items)
                 {
-                    foreach (var item in sentence.Items)
+                    if (!output.Contains(item) && item.Length == length && item.Type == SentenceModel.SentenceItemType.Word)
                     {
-                        if (!output.Contains(item) && item.Length == length && item.Type == SentenceModel.SentenceItemType.Word)
-                        {
-                            output.Add(item as IWord);
-                        }
+                        output.Add(item as IWord);
                     }
                 }
             }
@@ -48,26 +49,15 @@ namespace TextProcessorLibrary.TextExtensions
             var textParser = new TextParser();
             foreach (var sentence in text.Sentences.ToList())
             {
-                foreach (var word in sentence.Items.ToList())
+                foreach (var word in sentence.Items.ToList().Where(word => word.Type == SentenceModel.SentenceItemType.Word && word.Length == length))
                 {
-                    if (word.Type == SentenceModel.SentenceItemType.Word && word.Length == length)
-                    {
-                        sentence.Items.Remove(word);
-                    }
+                    sentence.Items.Remove(word);
                 }
                 var completeSentence = sentence.ToString();
                 completeSentence = Regex.Replace(completeSentence, @"[ \t]{2,}", " ");
                 completeSentence = Regex.Replace(completeSentence, @"^[ ]", string.Empty);
                 var index = text.Sentences.ToList().IndexOf(sentence);
                 text.Sentences[index] = textParser.ParseSentence(completeSentence);
-            }
-
-            for (int i = 0; i < text.Sentences.Count; i++)
-            {
-                for (int j = 0; j < text.Sentences.ToList()[i].Items.Count; j++)
-                {
-
-                }
             }
         }
 

@@ -7,7 +7,7 @@ namespace TextProcessorLibrary.Concordance
 {
     public class ConcordanceWord
     {
-        public ICollection<int> Lines { get; set; } 
+        public ICollection<int> Lines { get; } 
         public int Count { get; set; }
 
         public ConcordanceWord(ICollection<int> lines): this()

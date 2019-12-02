@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace TextProcessorLibrary
+namespace TextProcessorLibrary.Configuration
 {
     public class GlobalConfiguration
     {
-        private IDictionary<string, string> _configurations;
+        private readonly IDictionary<string, string> _configurations;
         public ICollection<string> FileNames { get; set; }
 
         public GlobalConfiguration()
@@ -15,12 +13,8 @@ namespace TextProcessorLibrary
         }
 
         public string this[string index] {
-            get {
-                return _configurations[index];
-            }
-            set {
-                _configurations[index] = value;
-            }
+            get => _configurations[index];
+            set => _configurations[index] = value;
         }
 
     }

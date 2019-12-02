@@ -9,10 +9,10 @@ namespace TextProcessorLibrary.Concordance.Parser
 {
     public class ConcordanceParser: IParser<IConcordance>
     {
-        private string _emptyStringExceptionMessage = "String passed through is null or empty";
+        private readonly string _emptyStringExceptionMessage = "String passed through is null or empty";
 
-        IConcordance _concordance;
-        int _lineNumber = 1;
+        private readonly IConcordance _concordance;
+        private int _lineNumber = 1;
         public ConcordanceParser()
         {
             _concordance = new Concordance();
@@ -29,14 +29,14 @@ namespace TextProcessorLibrary.Concordance.Parser
 
             foreach (var line in lines)
             {
-                parseLine(line);
+                ParseLine(line);
                 _lineNumber++;
             }
 
             return _concordance;
         }
 
-        private void parseLine(string str)
+        private void ParseLine(string str)
         {
             var words = Regex.Matches(str, @"'(.*?)'|(\w+)");
             foreach (var word in words)
