@@ -1,0 +1,2974 @@
+{
+  "Sentences": [
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "In",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "reasonable",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "reasonable",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "compliment",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "favourable",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "is",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "connection",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "dispatched",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "in",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "terminated",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": "?",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": "?",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 10,
+      "Type": 1
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "Do",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "esteem",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "object",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "we",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "called",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "father",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "excuse",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "remove",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": "?",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": "?",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 8,
+      "Type": 1
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "So",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "dear",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "real",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "on",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "like",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "more",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "it",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 7,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 8,
+          "Value": "Laughing",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "for",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "two",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "families",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "addition",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "expenses",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "surprise",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "the",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 8,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "If",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "sincerity",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "he",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "to",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "curiosity",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "arranging",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 6,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 5,
+          "Value": "Learn",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "taken",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "terms",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "be",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "as",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 5,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 8,
+          "Value": "Scarcely",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "mrs",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "produced",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "too",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "removing",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "new",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "old",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 7,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 7,
+          "Value": "Demesne",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "far",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "hearted",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "suppose",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "venture",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "excited",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "see",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "had",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "has",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 9,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 9,
+          "Value": "Dependent",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "on",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "so",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "extremely",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "delivered",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "by",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 6,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 3,
+          "Value": "Yet",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "no",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "jokes",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "worse",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "her",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "why",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 6,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 3,
+          "Value": "Bed",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "one",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "supposing",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "breakfast",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "day",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "fulfilled",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "off",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "depending",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "questions",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 9,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 8,
+          "Value": "Whatever",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "boy",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "her",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "exertion",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "his",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "extended",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 6,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 8,
+          "Value": "Ecstatic",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "followed",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "handsome",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "drawings",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "entirely",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "mrs",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "one",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "yet",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 8,
+          "Value": "outweigh",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 9,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "Of",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "acceptance",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "insipidity",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "remarkably",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "is",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 10,
+          "Value": "invitation",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 6,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "Be",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "at",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "miss",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "or",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "each",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "good",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "play",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "home",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "they",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 9,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "It",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "leave",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "taste",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "mr",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "in",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "it",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "fancy",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 7,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 3,
+          "Value": "She",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "son",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "lose",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "does",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "fond",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "bred",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "gave",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "lady",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "get",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 9,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 3,
+          "Value": "Sir",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "her",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "company",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "conduct",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "expense",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "bed",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "any",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 7,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 6,
+          "Value": "Sister",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "depend",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "change",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "off",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "piqued",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "one",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 6,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 9,
+          "Value": "Contented",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "continued",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "any",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "happiness",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "instantly",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "objection",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "yet",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "her",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "allowance",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 9,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 3,
+          "Value": "Use",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "correct",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "day",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "new",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "brought",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "tedious",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 6,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "By",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "come",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "this",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "been",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "in",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 5,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 4,
+          "Value": "Kept",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "easy",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "or",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "sons",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "my",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "it",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "done",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 7,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "Am",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "no",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "an",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "listening",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "depending",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "up",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "believing",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 7,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 6,
+          "Value": "Enough",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "around",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "remove",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "to",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "barton",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "agreed",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 6,
+          "Value": "regret",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "in",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "or",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "it",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 10,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 9,
+          "Value": "Advantage",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "mr",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "estimable",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "be",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "commanded",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 9,
+          "Value": "provision",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 6,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 4,
+          "Value": "Year",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "well",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "shot",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "deny",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "shew",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 4,
+          "Value": "come",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "now",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "had",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 8,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 5,
+          "Value": "Shall",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "downs",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "stand",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "marry",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "taken",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "his",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "for",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "out",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 8,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 2,
+          "Value": "Do",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "related",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "mr",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "account",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "brandon",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "an",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 2,
+          "Value": "up",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 7,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 5,
+          "Value": "Wrong",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "for",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "never",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "ready",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "ham",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "these",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "witty",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "him",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 8,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 3,
+          "Value": "Our",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "compass",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "see",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "age",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "uncivil",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "matters",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "weather",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "forbade",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "her",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 7,
+          "Value": "minutes",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 10,
+      "Type": 0
+    },
+    {
+      "Items": [
+        {
+          "Length": 5,
+          "Value": "Ready",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "how",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "but",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "truth",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "son",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 3,
+          "Value": "new",
+          "Type": 0,
+          "IsStartedWithConsonant": true
+        },
+        {
+          "Value": " ",
+          "Type": 1,
+          "Length": 1
+        },
+        {
+          "Length": 5,
+          "Value": "under",
+          "Type": 0,
+          "IsStartedWithConsonant": false
+        },
+        {
+          "Value": ".",
+          "Type": 1,
+          "Length": 1
+        }
+      ],
+      "PunctuationSign": {
+        "Value": ".",
+        "Type": 1,
+        "Length": 1
+      },
+      "WordsCount": 7,
+      "Type": 0
+    }
+  ]
+}

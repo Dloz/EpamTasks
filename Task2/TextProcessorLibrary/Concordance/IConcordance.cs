@@ -7,7 +7,7 @@ namespace TextProcessorLibrary.Concordance
     /// <summary>
     /// Represents public parts of Concordance class.
     /// </summary>
-    interface IConcordance
+    public interface IConcordance
     {
         /// <summary>
         /// Represents dictionary of words in concordance.
@@ -15,5 +15,6 @@ namespace TextProcessorLibrary.Concordance
         SortedDictionary<string, ConcordanceWord> Words { get; }
         void Add(string value, ConcordanceWord word);
         void Add(KeyValuePair<string, ConcordanceWord> keyValue);
+        void Add(string word, int lineNumber);
     }
 }

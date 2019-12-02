@@ -35,6 +35,10 @@ namespace TextProcessorLibrary.SentenceModel
 
         public Sentence(IList<ISentenceItem> items)
         {
+            if (items == null)
+            {
+                throw new ArgumentException("Sentence items is null.");
+            }
             Items = items;
         }
 

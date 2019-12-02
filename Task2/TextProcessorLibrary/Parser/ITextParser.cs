@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace TextProcessorLibrary
+namespace TextProcessorLibrary.Parser
 {
-    public interface ITextParser
+    public interface ITextParser: IParser<IText>
     {
-        IText ParseText(string str);
         ISentence ParseSentence(string str);
     }
 }

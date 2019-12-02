@@ -7,6 +7,7 @@ namespace TextProcessorLibrary
     public class GlobalConfiguration
     {
         private IDictionary<string, string> _configurations;
+        public ICollection<string> FileNames { get; set; }
 
         public GlobalConfiguration()
         {

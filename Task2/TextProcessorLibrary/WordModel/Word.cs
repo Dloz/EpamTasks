@@ -7,8 +7,10 @@ using TextProcessorLibrary.SentenceModel;
 
 namespace TextProcessorLibrary.WordModel
 {
-    class Word : IWord
+    public class Word : IWord
     {
+        private string _emptyStringExceptionMessage = "String passed through is null or empty";
+
         /// <summary>
         /// Represents length of the word.
         /// </summary>
@@ -24,7 +26,7 @@ namespace TextProcessorLibrary.WordModel
         /// <summary>
         /// Returns bool value whether word started with consonant letter or not.
         /// </summary>
-        public bool IsStartedWithConsonant => !Regex.IsMatch(Value, "^[aeiou]");
+        public bool IsStartedWithConsonant => !Regex.IsMatch(Value.ToLower(), "^[aeiou]");
 
 
         public Word()
@@ -34,12 +36,30 @@ namespace TextProcessorLibrary.WordModel
 
         public Word(string word): this()
         {
+            if (string.IsNullOrEmpty(word))
+            {
+                throw new ArgumentException(_emptyStringExceptionMessage);
+            }
             Value = word;
         }
 
         public override string ToString()
         {
             return $"{Value}";
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Word)
+            {
+                return Value.Equals(((IWord)obj).Value);
+            }
+            return base.Equals(obj);
         }
     }
 }

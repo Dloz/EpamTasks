@@ -7,6 +7,8 @@ namespace TextProcessorLibrary.SymbolModel
 {
     class Symbol : ISymbol
     {
+        private string _emptyStringExceptionMessage = "String passed through is null or empty";
+
         /// <summary>
         /// Represents string value of the part of the sentence.
         /// </summary>
@@ -22,6 +24,11 @@ namespace TextProcessorLibrary.SymbolModel
 
         public Symbol(string value)
         {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException(_emptyStringExceptionMessage);
+            }
+
             Value = value;
         }
         public override string ToString()

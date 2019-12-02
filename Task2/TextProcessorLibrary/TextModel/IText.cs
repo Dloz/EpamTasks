@@ -12,6 +12,6 @@ namespace TextProcessorLibrary
         /// <summary>
         /// Represents sentences in the text.
         /// </summary>
-        IList<ISentence> Sentences { get; }
+        IList<ISentence> Sentences { get; set; }
     }
 }

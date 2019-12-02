@@ -8,13 +8,18 @@ using TextProcessorLibrary.SentenceModel;
 using TextProcessorLibrary.SymbolModel;
 using TextProcessorLibrary.WordModel;
 
-namespace TextProcessorLibrary
+namespace TextProcessorLibrary.Parser
 {
     /// <summary>
     /// Represents parser which converts from string type to IText type.
     /// </summary>
     public class TextParser : ITextParser
     {
+        private const char dotSign = '.';
+        private const char questionSign = '?';
+        private const char exclamatorySign = '!';
+
+        private string _emptyStringExceptionMessage = "String passed through is null or empty";
         private IDictionary<char, Action> _actions;
         private IText _text;
         private ISentence _currentSentence;
@@ -55,6 +60,12 @@ namespace TextProcessorLibrary
 
         private void spaceAction()
         {
+            // if space at the beginning of the sentence.
+            if (_currentPosition == 0)
+            {
+                updatePositions();
+                return;
+            }
             // If there are symbol before current position, then avoid redundant word parsing.
             if (Regex.IsMatch(_sentenceToParse[_currentPosition - 1].ToString(), @"\W"))
             {
@@ -82,7 +93,7 @@ namespace TextProcessorLibrary
                 _currentSentence.Items.Add(parseWord(word));
                 _currentSentence.Items.Add(new Symbol(_sentenceToParse[_currentPosition].ToString()));
 
-                updatePositions(); // TODO: at this moment previousPos > currentPos
+                updatePositions();
             }
         }
 
@@ -135,12 +146,29 @@ namespace TextProcessorLibrary
             return new Word(word);
         }
 
+        private string removeSpaces(string str)
+        {
+            var output = "";
+
+            //Replace extra spaces and tabs.
+            output = Regex.Replace(str, @"\s+", " ");
+            output = Regex.Replace(output, @"\t+", " ");
+
+            return output;
+        }
+
         public IText ParseText(string str)
         {
+            if (string.IsNullOrEmpty(str))
+            {
+                throw new ArgumentException(_emptyStringExceptionMessage);
+            }
+
             _text = new TextModel.Text();
 
             Regex endOdSentenceRegex = new Regex(@"(?<=[\.!\?])\s+");
             var sentences = endOdSentenceRegex.Split(str);
+            var completeSentences = new List<string>();
 
             // if sentence from previous block ready to split, split them.
             // If previuos sentence is not ended, merge 2 sentences.
@@ -152,27 +180,34 @@ namespace TextProcessorLibrary
             
             // if last sentence is not complete.
             // then delete last sentence from array and add it to temporary variable.
-            if (!sentences.Last().EndsWith('.') && !sentences.Last().EndsWith("!") && !sentences.Last().EndsWith("?"))
+            if (!sentences.Last().EndsWith(dotSign) 
+                && !sentences.Last().EndsWith(exclamatorySign) 
+                && !sentences.Last().EndsWith(questionSign))
             {
-                int lastIndex = Array.IndexOf(sentences, sentences.Last());
+                //int lastIndex = Array.IndexOf(sentences, sentences.Last());
                 _sentencePending = sentences.Last();
-                sentences = sentences.Where((val, idx) => idx != lastIndex).ToArray(); // delete last sentence from array.
+                completeSentences = sentences.Take(sentences.Length - 1).ToList(); // delete last sentence from array.
             }
 
             // Parse sentnces from array and add them to the text.
-            foreach (var sentence in sentences)
+            foreach (var sentence in completeSentences)
             {
                 _text.Sentences.Add(ParseSentence(sentence));
             }
             return _text;
         }
-        public ISentence ParseSentence(string str)// make private
+        public ISentence ParseSentence(string str)
         {
+            if (string.IsNullOrEmpty(str))
+            {
+                throw new ArgumentException(_emptyStringExceptionMessage);
+            }
+
             //Make the string to be seen anywhere from the class.
             _sentenceToParse = str;
-            //Replace extra spaces and tabs.
-            _sentenceToParse = Regex.Replace(_sentenceToParse, @"\s+", " ");
-            _sentenceToParse = Regex.Replace(_sentenceToParse, @"\t+", " ");
+
+            // Remove extra spaces and tabs.
+            _sentenceToParse = removeSpaces(_sentenceToParse);
 
             // Create object of sentence to return
             _currentSentence = new Sentence();

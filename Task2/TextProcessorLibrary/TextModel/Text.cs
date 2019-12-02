@@ -12,7 +12,7 @@ namespace TextProcessorLibrary.TextModel
         /// <summary>
         /// Represents sentences in the text.
         /// </summary>
-        public IList<ISentence> Sentences { get; internal set; }
+        public IList<ISentence> Sentences { get; set; }
 
         public Text()
         {

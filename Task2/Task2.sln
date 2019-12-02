@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextProcessorLibrary", "TextProcessorLibrary\TextProcessorLibrary.csproj", "{A812D677-114F-4613-B37E-ED0544FF6F3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextProcessorConsole", "TextProcessorConsole\TextProcessorConsole.csproj", "{D13B1572-09F9-4046-8984-2E6CABD9C0BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextProcessorConsole", "TextProcessorConsole\TextProcessorConsole.csproj", "{D13B1572-09F9-4046-8984-2E6CABD9C0BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

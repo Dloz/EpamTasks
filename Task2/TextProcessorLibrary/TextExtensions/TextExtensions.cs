@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using TextProcessorLibrary;
 using System.Text;
+using TextProcessorLibrary.Parser;
+using System.Text.RegularExpressions;
 
 namespace TextProcessorLibrary.TextExtensions
 {
@@ -11,10 +13,14 @@ namespace TextProcessorLibrary.TextExtensions
         public static void ReplaceWord(this IText text, string word, string sequenceToReplace)
         {
             var textParser = new TextParser();
-            foreach (var sentence in text.Sentences)
+            foreach (var sentence in text.Sentences.ToList())
             {
                 var sen = text.Sentences.ToList().Find(s => s == sentence);
+                var index = text.Sentences.ToList().IndexOf(sentence);
+
                 sen = textParser.ParseSentence(sentence.ToString().Replace(word, sequenceToReplace));
+                text.Sentences[index] = sen;
+
             }
         }
 
@@ -39,14 +45,28 @@ namespace TextProcessorLibrary.TextExtensions
 
         public static void DeleteWords(this IText text, int length)
         {
-            foreach (var sentence in text.Sentences)
+            var textParser = new TextParser();
+            foreach (var sentence in text.Sentences.ToList())
             {
-                foreach (var word in sentence.Items)
+                foreach (var word in sentence.Items.ToList())
                 {
                     if (word.Type == SentenceModel.SentenceItemType.Word && word.Length == length)
                     {
                         sentence.Items.Remove(word);
                     }
+                }
+                var completeSentence = sentence.ToString();
+                completeSentence = Regex.Replace(completeSentence, @"[ \t]{2,}", " ");
+                completeSentence = Regex.Replace(completeSentence, @"^[ ]", string.Empty);
+                var index = text.Sentences.ToList().IndexOf(sentence);
+                text.Sentences[index] = textParser.ParseSentence(completeSentence);
+            }
+
+            for (int i = 0; i < text.Sentences.Count; i++)
+            {
+                for (int j = 0; j < text.Sentences.ToList()[i].Items.Count; j++)
+                {
+
                 }
             }
         }
