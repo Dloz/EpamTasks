@@ -4,8 +4,11 @@ using System.Text;
 
 namespace TelephoneExchangeLibrary
 {
-    public interface IContract
+    public interface IContract: IIdentifiable
     {
-        int TariffPlan { get; set; }
+        //int PhoneNumber { get; }
+        int TariffPlan { get; }
+        int Operator { get; }
+        int Number { get; set; }
     }
 }

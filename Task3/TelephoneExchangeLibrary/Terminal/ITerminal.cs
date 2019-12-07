@@ -6,6 +6,9 @@ namespace TelephoneExchangeLibrary
 {
     public interface ITerminal: IIdentifiable
     {
-        int Number { get; set; }
+        event EventHandler IncomingCallEvent;
+        event EventHandler OutgoingCallEvent;
+        event EventHandler RespondEvent;
+        event EventHandler RejectEvent;
     }
 }

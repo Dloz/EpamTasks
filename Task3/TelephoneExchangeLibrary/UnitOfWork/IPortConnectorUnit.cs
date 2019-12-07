@@ -4,9 +4,9 @@ using System.Text;
 
 namespace TelephoneExchangeLibrary
 {
-    public interface IStation
+    public interface IPortConnectorUnit
     {
-
-        int Ports { get; }
+        void ConnectPort();
+        void DisconnectPort();
     }
 }

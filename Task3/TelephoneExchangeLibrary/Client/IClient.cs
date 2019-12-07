@@ -7,9 +7,9 @@ namespace TelephoneExchangeLibrary
     public interface IClient
     {
         int Terminal { get; set; }
-        int Contract { get; set; }
+        ICollection<IContract> Contracts { get; set; }
 
-        void Call();
+        void Call(); // terminal.InvokeCallEvent(number) --->  port.InvokeCallEvent()
         void ConnectTerminal();
         void DisconnectTerminal();
     }
