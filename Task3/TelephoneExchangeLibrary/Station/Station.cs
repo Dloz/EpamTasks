@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TelephoneExchangeLibrary
 {
-    public class Station
+    public class Station : IStation
     {
+        public ICollection<IPort> Ports => throw new NotImplementedException();
+
+        public void ConnectTerminal(ITerminal terminal)
+        {
+
+        }
     }
 }

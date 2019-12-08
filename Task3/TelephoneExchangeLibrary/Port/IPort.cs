@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using TelephoneExchangeLibrary.EventsArgs;
 
 namespace TelephoneExchangeLibrary
 {
-    public interface IPort: IIdentifiable
+    public interface IPort: IIdentifiable, IRejectable, IRespondable, ICallable
     {
-        event EventHandler RespondEvent;
         event EventHandler IncomingCallEvent;
         event EventHandler OutgoingCallEvent;
+        event EventHandler RespondEvent;
         event EventHandler RejectEvent;
 
-        int Status { get; set; }
+        PortStatus Status { get; }
+
+        void Connect(object sender, EventArgs e);
+        void Disconnect(object sender, EventArgs e);
     }
 }

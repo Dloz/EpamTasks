@@ -6,6 +6,8 @@ namespace TelephoneExchangeLibrary
 {
     public interface IOperator
     {
+        int Clients { get; set; }
+
         void SignContract(IClient client);
     }
 }

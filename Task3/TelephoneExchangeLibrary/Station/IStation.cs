@@ -7,6 +7,8 @@ namespace TelephoneExchangeLibrary
     public interface IStation
     {
 
-        int Ports { get; }
+        ICollection<IPort> Ports { get; }
+
+        void ConnectTerminal(ITerminal terminal);
     }
 }

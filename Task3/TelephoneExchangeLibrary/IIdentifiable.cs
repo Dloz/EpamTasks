@@ -6,6 +6,6 @@ namespace TelephoneExchangeLibrary
 {
     public interface IIdentifiable
     {
-        int Id { get; set; }
+        Guid Id { get; }
     }
 }

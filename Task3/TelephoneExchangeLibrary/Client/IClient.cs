@@ -4,12 +4,11 @@ using System.Text;
 
 namespace TelephoneExchangeLibrary
 {
-    public interface IClient
+    public interface IClient: ICallable, IRejectable, IRespondable
     {
-        int Terminal { get; set; }
+        ITerminal Terminal { get; set; }
         ICollection<IContract> Contracts { get; set; }
 
-        void Call(); // terminal.InvokeCallEvent(number) --->  port.InvokeCallEvent()
         void ConnectTerminal();
         void DisconnectTerminal();
     }

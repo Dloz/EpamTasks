@@ -1,96 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="Unit of work">
-    <Position X="1.01" Y="2.729" Height="0.396" Width="0.908" />
+    <Position X="1.022" Y="3.436" Height="0.396" Width="0.908" />
   </Comment>
   <Comment CommentText="1. Protocol&#xD;&#xA;2. Event chain">
-    <Position X="0.5" Y="1.771" Height="0.552" Width="1.325" />
+    <Position X="0.5" Y="2.502" Height="0.552" Width="1.325" />
   </Comment>
   <Comment CommentText="Divide station into submodules&#xD;&#xA;">
-    <Position X="2.063" Y="3.302" Height="0.48" Width="1.179" />
+    <Position X="2.183" Y="3.333" Height="0.645" Width="1.358" />
+  </Comment>
+  <Comment CommentText="1. Create object model&#xD;&#xA;2. Add methods and properties&#xD;&#xA;3. Initial logic in methods&#xD;&#xA;">
+    <Position X="7" Y="5.25" Height="0.854" Width="1.804" />
   </Comment>
   <Class Name="TelephoneExchangeLibrary.Station">
-    <Position X="2.25" Y="7.25" Width="1.5" />
+    <Position X="2.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Station\Station.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TelephoneExchangeLibrary.Operator">
-    <Position X="2.25" Y="6" Width="1.5" />
+    <Position X="2.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Operator\Operator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TelephoneExchangeLibrary.Contract">
-    <Position X="4" Y="8.5" Width="1.5" />
+    <Position X="2.25" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contract\Contract.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TelephoneExchangeLibrary.Client">
-    <Position X="2.25" Y="8.5" Width="1.5" />
+    <Position X="2.25" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAABAAAAAAAJAAAAAAAAAAACAAAAAAAAAAIAABAAIA=</HashCode>
       <FileName>Client\Client.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TelephoneExchangeLibrary.Terminal">
-    <Position X="0.5" Y="8.5" Width="1.5" />
+    <Position X="0.5" Y="10.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Terminal\Terminal.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TelephoneExchangeLibrary.TariffPlan">
-    <Position X="7.75" Y="4" Width="1.5" />
+    <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contract\TariffPlan\TariffPlan.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TelephoneExchangeLibrary.Port">
-    <Position X="7.75" Y="5.25" Width="1.5" />
+    <Position X="4" Y="10.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQCBABEAEAAIAAAAAAAAIACAAQAAAAAAAAAAABAAIA=</HashCode>
       <FileName>Port\Port.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TelephoneExchangeLibrary.UnitOfWork">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="8.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>UnitOfWork.cs</FileName>
+      <FileName>UnitOfWork\UnitOfWork.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TelephoneExchangeLibrary.PortConnectorUnit">
-    <Position X="4.25" Y="5.25" Width="1.5" />
+    <Position X="10.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
-      <FileName>PortConnectorUnit.cs</FileName>
+      <FileName>UnitOfWork\PortConnectorUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="TelephoneExchangeLibrary.IOperator">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Operator\IOperator.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TelephoneExchangeLibrary.IStation">
-    <Position X="2.25" Y="4.5" Width="1.5" />
+    <Position X="3" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Station\IStation.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TelephoneExchangeLibrary.IClient">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAQAAAAAAABAAAAAAAAAAACAAAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAABAAAAAAAAAAACAAAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Client\IClient.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -118,7 +125,7 @@
   <Interface Name="TelephoneExchangeLibrary.IPort">
     <Position X="9.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABEAEAAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAABEAEAAAAAAAAAAAIACAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Port\IPort.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -130,42 +137,63 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="TelephoneExchangeLibrary.IBillingSystem">
-    <Position X="0.5" Y="5.75" Width="1.5" />
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BillingSystem\IBillingSystem.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TelephoneExchangeLibrary.ICallRecord">
-    <Position X="6" Y="7.25" Width="2" />
+    <Position X="5" Y="6.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>ICallRecord.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TelephoneExchangeLibrary.IReporterUnit">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="14.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IReporterUnit.cs</FileName>
+      <FileName>UnitOfWork\IReporterUnit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TelephoneExchangeLibrary.ICallHandlerUnit">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="12.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ICallHandlerUnit.cs</FileName>
+      <FileName>UnitOfWork\ICallHandlerUnit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TelephoneExchangeLibrary.IPortConnectorUnit">
-    <Position X="4" Y="3.25" Width="1.5" />
+    <Position X="10.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
-      <FileName>IPortConnectorUnit.cs</FileName>
+      <FileName>UnitOfWork\IPortConnectorUnit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TelephoneExchangeLibrary.IRespondable">
+    <Position X="13.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>IRespondable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TelephoneExchangeLibrary.IRejectable">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>IRejectable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TelephoneExchangeLibrary.ICallable">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICallable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="TelephoneExchangeLibrary.PortStatus">
-    <Position X="6" Y="3.5" Width="1.5" />
+    <Position X="11.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Port\PortStatus.cs</FileName>
