@@ -4,7 +4,21 @@ using System.Text;
 
 namespace TelephoneExchangeLibrary
 {
-    public class Contract
+    public class Contract : IContract
     {
+        public ITariffPlan TariffPlan { get; }
+
+        public IOperator Operator { get; }
+
+        public int PhoneNumber { get; }
+
+        public Guid Id { get; }
+
+        public Contract(ITariffPlan tariffPlan, IOperator telephoneOperator, int phoneNumber)
+        {
+            TariffPlan = tariffPlan;
+            Operator = telephoneOperator;
+            PhoneNumber = phoneNumber;
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace TelephoneExchangeLibrary
 
         public void ConnectTerminal(ITerminal terminal)
         {
-
+            
         }
     }
 }

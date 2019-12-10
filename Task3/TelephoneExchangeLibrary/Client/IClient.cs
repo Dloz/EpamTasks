@@ -6,9 +6,10 @@ namespace TelephoneExchangeLibrary
 {
     public interface IClient: ICallable, IRejectable, IRespondable
     {
-        ITerminal Terminal { get; set; }
-        ICollection<IContract> Contracts { get; set; }
-
+        ITerminal Terminal { get; }
+        ICollection<IContract> Contracts { get; }
+        void ReceiveTerminal(ITerminal terminal);
+        void ReceiveContract(IContract contract);
         void ConnectTerminal();
         void DisconnectTerminal();
     }

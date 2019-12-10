@@ -7,8 +7,24 @@ namespace TelephoneExchangeLibrary
 {
     public class Client : IClient
     {
-        public ITerminal Terminal { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ICollection<IContract> Contracts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ITerminal Terminal { get; private set; }
+        public ICollection<IContract> Contracts { get; private set; }
+
+        public void ReceiveContract(IContract contract)
+        {
+            if (contract != null)
+            {
+                Contracts.Add(contract);
+            }
+        }
+
+        public void ReceiveTerminal(ITerminal terminal)
+        {
+            if (terminal != null)
+            {
+                Terminal = terminal;
+            }
+        }
 
         public void ConnectTerminal()
         {
@@ -29,6 +45,7 @@ namespace TelephoneExchangeLibrary
         {
             throw new NotImplementedException();
         }
+
 
         public void Reject(object sender, RejectEventArgs e)
         {
