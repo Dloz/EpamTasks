@@ -6,7 +6,13 @@ namespace TelephoneExchangeLibrary.EventsArgs
 {
     public class CallEventArgs: EventArgs
     {
-        public int CallerNumber { get; set; }
-        public int CallingNumber { get; set; }
+        public int CallerNumber { get; }
+        public int TargetNumber { get; }
+
+        public CallEventArgs(int callerNumber, int targetNumber)
+        {
+            CallerNumber = callerNumber;
+            TargetNumber = targetNumber;
+        }
     }
 }

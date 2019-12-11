@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TelephoneExchangeLibrary
 {
-    public interface IClient: ICallable, IRejectable, IRespondable
+    public interface IClient
     {
         ITerminal Terminal { get; }
         ICollection<IContract> Contracts { get; }

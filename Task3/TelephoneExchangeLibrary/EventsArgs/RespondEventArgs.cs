@@ -6,5 +6,11 @@ namespace TelephoneExchangeLibrary.EventsArgs
 {
     public class RespondEventArgs: EventArgs
     {
+        public int CallerNumber { get; }
+
+        public RespondEventArgs(int callerNumber)
+        {
+            CallerNumber = callerNumber;
+        }
     }
 }

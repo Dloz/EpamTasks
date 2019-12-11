@@ -36,23 +36,17 @@ namespace TelephoneExchangeLibrary
             throw new NotImplementedException();
         }
 
-        public void IncomingCall(object sender, CallEventArgs e)
+        public void Call(int targetNumber)
+        {
+
+        }
+
+        public void Reject()
         {
             throw new NotImplementedException();
         }
 
-        public void OutgoingCall(object sender, CallEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public void Reject(object sender, RejectEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Respond(object sender, RespondEventArgs e)
+        public void Respond()
         {
             throw new NotImplementedException();
         }

@@ -6,6 +6,6 @@ namespace TelephoneExchangeLibrary
 {
     public interface ITariffPlan
     {
-        int Cost { get; set; }
+        int Cost { get; }
     }
 }

@@ -7,41 +7,46 @@ namespace TelephoneExchangeLibrary
 {
     public class Port : IPort
     {
-        public PortStatus Status { get; }
+        public PortStatus Status { get; private set; }
         public Guid Id { get; }
 
-        public event EventHandler RespondEvent;
-        public event EventHandler IncomingCallEvent;
-        public event EventHandler OutgoingCallEvent;
-        public event EventHandler RejectEvent;
+        public event EventHandler<CallEventArgs> OutgoingCallEvent;
+        public event EventHandler<CallEventArgs> IncomingCallEvent;
+        public event EventHandler<RespondEventArgs> RespondEvent;
+        public event EventHandler<RejectEventArgs> RejectEvent;
+
+        public Port()
+        {
+            Id = Guid.NewGuid();
+        }
 
         public void IncomingCall(object sender, CallEventArgs e)
         {
-            throw new NotImplementedException();
+            IncomingCallEvent?.Invoke(this, e);
         }
 
         public void OutgoingCall(object sender, CallEventArgs e)
         {
-            throw new NotImplementedException();
+            OutgoingCallEvent?.Invoke(this, e);
         }
 
         public void Reject(object sender, RejectEventArgs e)
         {
-            throw new NotImplementedException();
+            RejectEvent?.Invoke(this, e);
         }
 
         public void Respond(object sender, RespondEventArgs e)
         {
-            throw new NotImplementedException();
+            RespondEvent?.Invoke(this, e);
         }
         public void Connect(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Status = PortStatus.Connected;
         }
 
         public void Disconnect(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Status = PortStatus.Disconnected;
         }
     }
 }

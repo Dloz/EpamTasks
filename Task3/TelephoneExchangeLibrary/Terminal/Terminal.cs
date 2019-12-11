@@ -7,31 +7,36 @@ namespace TelephoneExchangeLibrary
 {
     public class Terminal : ITerminal
     {
-        public Guid Id => throw new NotImplementedException();
+        public Guid Id { get; }
 
-        public event EventHandler IncomingCallEvent;
-        public event EventHandler OutgoingCallEvent;
-        public event EventHandler RespondEvent;
-        public event EventHandler RejectEvent;
+        public event EventHandler<CallEventArgs> IncomingCallEvent;
+        public event EventHandler<CallEventArgs> OutgoingCallEvent;
+        public event EventHandler<RespondEventArgs> RespondEvent;
+        public event EventHandler<RejectEventArgs> RejectEvent;
+
+        public Terminal()
+        {
+            Id = Guid.NewGuid();
+        }
 
         public void IncomingCall(object sender, CallEventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        public void OutgoingCall(object sender, CallEventArgs e)
+        public void OutgoingCall(int callerNumber, int targetNumber)
         {
-            throw new NotImplementedException();
+            OutgoingCallEvent?.Invoke(this, new CallEventArgs(callerNumber, targetNumber));
         }
 
-        public void Reject(object sender, RejectEventArgs e)
+        public void Reject()
         {
-            throw new NotImplementedException();
+            RejectEvent?.Invoke(this, new RejectEventArgs());
         }
 
-        public void Respond(object sender, RespondEventArgs e)
+        public void Respond()
         {
-            throw new NotImplementedException();
+            RespondEvent?.Invoke(this, new RespondEventArgs());
         }
     }
 }

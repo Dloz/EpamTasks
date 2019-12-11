@@ -16,6 +16,7 @@ namespace TelephoneExchangeLibrary
 
         public Contract(ITariffPlan tariffPlan, IOperator telephoneOperator, int phoneNumber)
         {
+            Id = Guid.NewGuid();
             TariffPlan = tariffPlan;
             Operator = telephoneOperator;
             PhoneNumber = phoneNumber;

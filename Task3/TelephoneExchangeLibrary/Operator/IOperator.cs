@@ -8,7 +8,6 @@ namespace TelephoneExchangeLibrary
     {
         IStation Station { get; }
         ICollection<IClient> Clients { get; }
-
         void SignContract(IClient client);
     }
 }

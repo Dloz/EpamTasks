@@ -2,20 +2,36 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TelephoneExchangeLibrary
+namespace TelephoneExchangeLibrary.UnitOfWork
 {
     public abstract class UnitOfWork
     {
         protected IStation station;
+        protected IBillingSystem billingSystem;
+        protected IOperator phoneOperator;
 
         public void RegisterStation(IStation station)
         {
-            this.station = station;
+            if (station != null)
+            {
+                this.station = station; 
+            }
         }
 
-        public void RegisterBillingSystem()
+        public void RegisterBillingSystem(IBillingSystem billingSystem)
         {
-            throw new System.NotImplementedException();
+            if (billingSystem != null)
+            {
+                this.billingSystem = billingSystem; 
+            }
+        }
+
+        public void RegisterOperator(IOperator phoneOperator)
+        {
+            if (phoneOperator != null)
+            {
+                this.phoneOperator = phoneOperator; 
+            }
         }
     }
 }
