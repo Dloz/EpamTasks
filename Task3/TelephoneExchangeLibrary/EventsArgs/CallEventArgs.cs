@@ -4,8 +4,9 @@ using System.Text;
 
 namespace TelephoneExchangeLibrary.EventsArgs
 {
-    public class CallEventArgs: EventArgs
+    public class CallEventArgs: EventArgs, IIdentifiable
     {
+        public Guid Id { get; }
         /// <summary>
         /// Represents id of the port which calling.
         /// </summary>
@@ -17,6 +18,7 @@ namespace TelephoneExchangeLibrary.EventsArgs
 
         public CallEventArgs(Guid portId, int targetNumber)
         {
+            Id = Guid.NewGuid();
             PortId = portId;
             TargetNumber = targetNumber;
         }

@@ -4,13 +4,17 @@ using System.Text;
 
 namespace TelephoneExchangeLibrary.EventsArgs
 {
-    public class RespondEventArgs: EventArgs
+    public class RespondEventArgs: EventArgs, IIdentifiable
     {
-        public int CallerNumber { get; }
+        
+        public int ResponderNumber { get; }
+
+        public Guid Id { get; }
 
         public RespondEventArgs(int callerNumber)
         {
-            CallerNumber = callerNumber;
+            Id = Guid.NewGuid();
+            ResponderNumber = callerNumber;
         }
     }
 }

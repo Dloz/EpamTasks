@@ -17,6 +17,10 @@ namespace TelephoneExchangeLibrary
         public ICollection<IClient> Clients { get; }
         public IStation Station { get; }
 
+        public IBillingSystem BillingSystem { get; }
+
+        public ICollection<IStation> Stations { get; }
+
         public Operator(IStation station)
         {
             Station = station;

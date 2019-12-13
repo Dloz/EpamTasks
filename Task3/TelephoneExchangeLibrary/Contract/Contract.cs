@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TelephoneExchangeLibrary.CallRecord;
 
 namespace TelephoneExchangeLibrary
 {
@@ -13,6 +14,11 @@ namespace TelephoneExchangeLibrary
         public int PhoneNumber { get; }
 
         public Guid Id { get; }
+
+        public Guid PortId { get; }
+        public Guid StationId { get; }
+
+        public ICollection<ICallRecord> CallHistory { get; }
 
         public Contract(ITariffPlan tariffPlan, IOperator telephoneOperator, int phoneNumber)
         {
