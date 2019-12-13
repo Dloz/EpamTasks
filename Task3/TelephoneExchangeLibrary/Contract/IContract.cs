@@ -6,8 +6,15 @@ namespace TelephoneExchangeLibrary
 {
     public interface IContract: IIdentifiable
     {
+        // PortId
+        Guid PortId { get; }
+        // StationId
+        Guid StationId { get; }
+        // Balance
+        // CallHistory
+        ICollection<ICallRecord> CallHistory { get; }
         ITariffPlan TariffPlan { get; }
-        IOperator Operator { get; }
+        // delete: IOperator Operator { get; }
         int PhoneNumber { get; }
     }
 }

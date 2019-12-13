@@ -9,7 +9,7 @@ namespace TelephoneExchangeLibrary
     {
         // Supposed that phone numbers are only 5-digit length
         private const int minNumberValue = 00000;
-        private const int maxNumberValue = 99999;
+        private const int maxNumberValue = 99999; //MAX_NUM
         /// <summary>
         /// Represents registered phone numbers.
         /// </summary>

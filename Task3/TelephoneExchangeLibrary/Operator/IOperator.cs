@@ -6,7 +6,8 @@ namespace TelephoneExchangeLibrary
 {
     public interface IOperator
     {
-        IStation Station { get; }
+        IBillingSystem BillingSystem { get; }
+        ICollection<IStation> Stations { get; } 
         ICollection<IClient> Clients { get; }
         void SignContract(IClient client);
     }

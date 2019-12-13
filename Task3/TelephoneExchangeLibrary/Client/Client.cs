@@ -23,7 +23,13 @@ namespace TelephoneExchangeLibrary
             if (terminal != null)
             {
                 Terminal = terminal;
+                Terminal.IncomingCallEvent += IncomingCall;
             }
+        }
+
+        private void IncomingCall(object sender, CallEventArgs e)
+        {
+            throw new NotImplementedException();// Notify user about incomming call.
         }
 
         public void ConnectTerminal()

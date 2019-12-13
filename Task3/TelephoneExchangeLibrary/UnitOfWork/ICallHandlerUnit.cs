@@ -7,6 +7,7 @@ namespace TelephoneExchangeLibrary
 {
     public interface ICallHandlerUnit
     {
-        void HandleCall(IPort port, CallEventArgs callEventArgs);
+        void HandleCall(CallEventArgs callEventArgs);
+        void HandleAnswer(RespondEventArgs respondEventArgs);
     }
 }

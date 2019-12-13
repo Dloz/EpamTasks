@@ -6,6 +6,6 @@ namespace TelephoneExchangeLibrary
 {
     public interface IBillingSystem
     {
-        ICollection<ICallRecord> CallHistory { get; }
+        ICollection<ITariffPlan> TariffPlans { get; }
     }
 }

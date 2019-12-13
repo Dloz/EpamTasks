@@ -9,6 +9,7 @@ namespace TelephoneExchangeLibrary
     {
         public PortStatus Status { get; private set; }
         public Guid Id { get; }
+        public ITerminal Terminal { get; private set; }
 
         public event EventHandler<CallEventArgs> OutgoingCallEvent;
         public event EventHandler<CallEventArgs> IncomingCallEvent;
@@ -18,27 +19,8 @@ namespace TelephoneExchangeLibrary
         public Port()
         {
             Id = Guid.NewGuid();
-        }
+        } 
 
-        public void IncomingCall(object sender, CallEventArgs e)
-        {
-            IncomingCallEvent?.Invoke(this, e);
-        }
-
-        public void OutgoingCall(object sender, CallEventArgs e)
-        {
-            OutgoingCallEvent?.Invoke(this, e);
-        }
-
-        public void Reject(object sender, RejectEventArgs e)
-        {
-            RejectEvent?.Invoke(this, e);
-        }
-
-        public void Respond(object sender, RespondEventArgs e)
-        {
-            RespondEvent?.Invoke(this, e);
-        }
         public void Connect(object sender, EventArgs e)
         {
             Status = PortStatus.Connected;
@@ -48,5 +30,36 @@ namespace TelephoneExchangeLibrary
         {
             Status = PortStatus.Disconnected;
         }
+
+        public void ConnectTerminal(ITerminal terminal)
+        {
+            IncomingCallEvent += terminal.IncomingCall;
+            terminal.OutgoingCallEvent += OutgoingCall;
+            terminal.RespondEvent += Respond;
+            terminal.RejectEvent += Reject;
+            Terminal = terminal;
+        }
+
+        public void IncomingCall(CallEventArgs e)
+        {
+            IncomingCallEvent?.Invoke(this, e);
+        }
+
+        private void OutgoingCall(object sender, CallEventArgs e)
+        {
+            e = new CallEventArgs(Id, e.TargetNumber);
+            OutgoingCallEvent?.Invoke(this, e);
+        }
+
+        private void Reject(object sender, RejectEventArgs e)
+        {
+            RejectEvent?.Invoke(this, e);
+        }
+
+        private void Respond(object sender, RespondEventArgs e)
+        {
+            RespondEvent?.Invoke(this, e);
+        }
+
     }
 }
