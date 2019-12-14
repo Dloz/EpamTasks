@@ -7,13 +7,16 @@ namespace TelephoneExchangeLibrary
 {
     public interface ITerminal: IIdentifiable
     {
-        // Contract
         int Number { get; }
 
-        //event EventHandler<CallEventArgs> IncomingCallEvent;
+        event EventHandler<CallEventArgs> IncomingCallEvent;
         event EventHandler<CallEventArgs> OutgoingCallEvent;
         event EventHandler<RespondEventArgs> RespondEvent;
         event EventHandler<RejectEventArgs> RejectEvent;
+
+        void Call(int targetNumber);
+        void Respond();
+        void Reject();
 
         void IncomingCall(object sender, CallEventArgs e);
     }

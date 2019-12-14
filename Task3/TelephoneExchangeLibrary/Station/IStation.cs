@@ -7,6 +7,10 @@ namespace TelephoneExchangeLibrary
     public interface IStation: IIdentifiable
     {
         ICollection<IPort> Ports { get; }
-        void ConnectTerminal(ITerminal terminal);
+        /// <summary>
+        /// Represents method which connects terminal to the station.
+        /// </summary>
+        /// <returns>Port in which terminal connected.</returns>
+        IPort ConnectTerminal(ITerminal terminal);
     }
 }

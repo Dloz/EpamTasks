@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TelephoneExchangeLibrary
+namespace TelephoneExchangeLibrary.BillingSystem
 {
     public interface IBillingSystem
     {

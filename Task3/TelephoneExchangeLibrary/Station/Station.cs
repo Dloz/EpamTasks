@@ -7,7 +7,7 @@ namespace TelephoneExchangeLibrary
 {
     public class Station : IStation
     {
-        private IStation station;
+        private ICallHandlerUnit callHandler;
         private IDictionary<int, IPort> userPorts; // contract - key. or contractId
         public ICollection<IPort> Ports { get; private set; }
 
@@ -16,11 +16,19 @@ namespace TelephoneExchangeLibrary
         public Station()
         {
             Id = Guid.NewGuid();
+            Ports = new List<IPort>();
         }
 
-        public void ConnectTerminal(ITerminal terminal)
+        public Station(ICallHandlerUnit callHandler): this()
+        {
+            this.callHandler = callHandler;
+        }
+
+        public IPort ConnectTerminal(ITerminal terminal)
         {
             var port = new Port();
+            port.ConnectTerminal(terminal);
+
             Ports.Add(port);
 
             port.IncomingCallEvent += terminal.IncomingCall;
@@ -28,6 +36,7 @@ namespace TelephoneExchangeLibrary
             port.RejectEvent += HandleReject;
             port.RespondEvent += HandleRespond;
 
+            return port;
 
         }
 
@@ -38,16 +47,16 @@ namespace TelephoneExchangeLibrary
 
         private void HandleCall(object sender, CallEventArgs e)
         {
-            
+            callHandler.HandleCall(e);
         }
 
-        private void HandleReject(object sender, RejectEventArgs callEventArgs)
+        private void HandleReject(object sender, RejectEventArgs e)
         {
-
+            callHandler.HandleReject(e);
         }
-        private void HandleRespond(object sender, RespondEventArgs callEventArgs)
+        private void HandleRespond(object sender, RespondEventArgs e)
         {
-
+            callHandler.HandleRespond(e);
         }
     }
 }

@@ -10,6 +10,11 @@ namespace TelephoneExchangeLibrary
         public ITerminal Terminal { get; private set; }
         public ICollection<IContract> Contracts { get; private set; }
 
+        public Client()
+        {
+            Contracts = new List<IContract>();
+        }
+
         public void ReceiveContract(IContract contract)
         {
             if (contract != null)
@@ -34,7 +39,7 @@ namespace TelephoneExchangeLibrary
 
         public void ConnectTerminal()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void DisconnectTerminal()
@@ -44,17 +49,17 @@ namespace TelephoneExchangeLibrary
 
         public void Call(int targetNumber)
         {
-
+            Terminal.Call(targetNumber);
         }
 
         public void Reject()
         {
-            throw new NotImplementedException();
+            Terminal.Reject();
         }
 
         public void Respond()
         {
-            throw new NotImplementedException();
+            Terminal.Respond();
         }
     }
 }

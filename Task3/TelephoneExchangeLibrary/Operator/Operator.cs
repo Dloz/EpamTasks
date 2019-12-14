@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TelephoneExchangeLibrary.BillingSystem;
 
 namespace TelephoneExchangeLibrary
 {
     public class Operator : IOperator
     {
         // Supposed that phone numbers are only 5-digit length
-        private const int minNumberValue = 00000;
-        private const int maxNumberValue = 99999; //MAX_NUM
+        private const int MIN_NUMBER_VALUE = 00000;
+        private const int MAX_NUMBER_VALUE = 99999; //MAX_NUM
         /// <summary>
         /// Represents registered phone numbers.
         /// </summary>
@@ -21,33 +22,53 @@ namespace TelephoneExchangeLibrary
 
         public ICollection<IStation> Stations { get; }
 
-        public Operator(IStation station)
+        public Operator()
+        {
+            Clients = new List<IClient>();
+        }
+
+        public Operator(IStation station, IBillingSystem billingSystem): this()
         {
             Station = station;
+            BillingSystem = billingSystem;
         }
 
         public void SignContract(IClient client)
         {
+            if (client == null)
+            {
+                throw new ArgumentException("Client is not identified.");
+            }
+
             //Create random number
             var phoneNumber = GeneratePhoneNumber();
             //Create tariff plan
             var tariffPlan = new TariffPlan(5);
 
-            var contract = new Contract(tariffPlan, this, phoneNumber);
             var terminal = new Terminal();
-            Station.ConnectTerminal(terminal);
+            var port = Station.ConnectTerminal(terminal);
+            var contract = new Contract(tariffPlan, this, phoneNumber, port.Id, Station.Id);
+            terminal.Number = contract.PhoneNumber;
 
             client.ReceiveTerminal(terminal);
             client.ReceiveContract(contract);
+
+            Clients.Add(client);
         }
 
         private int GeneratePhoneNumber()
         {
-            var phoneNumber = new Random().Next(minNumberValue, maxNumberValue);
+            var phoneNumber = new Random().Next(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE);
+            if (Clients.Count == 0)
+            {
+                return phoneNumber;
+            }
+
             if (_registeredPhoneNumbers.Contains(phoneNumber))
             {
                 return GeneratePhoneNumber();
             }
+
             return phoneNumber;
         }
     }

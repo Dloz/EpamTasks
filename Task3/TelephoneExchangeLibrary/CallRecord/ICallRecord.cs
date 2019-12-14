@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TelephoneExchangeLibrary.CallRecord
 {
-    public interface ICallRecord
+    public interface ICallRecord: IIdentifiable
     {
         DateTime StartedAt{ get; }
         DateTime EndedAt{ get; }

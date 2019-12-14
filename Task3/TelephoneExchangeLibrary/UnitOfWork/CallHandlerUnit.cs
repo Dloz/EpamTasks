@@ -7,7 +7,7 @@ using TelephoneExchangeLibrary.CallRecord;
 
 namespace TelephoneExchangeLibrary.UnitOfWork
 {
-    class CallHandlerUnit : UnitOfWork, ICallHandlerUnit
+    public class CallHandlerUnit : UnitOfWork, ICallHandlerUnit
     {
         /// <summary>
         /// Reperents connections at the moment of time as callerNumber, targetNumber, CallId
@@ -18,9 +18,9 @@ namespace TelephoneExchangeLibrary.UnitOfWork
         {
             connections = new List<ConnectionModel>();
         }
-        public void HandleAnswer(RespondEventArgs e)
+        public void HandleRespond(RespondEventArgs e)
         {
-            var currentConnection = connections.FirstOrDefault(c => c.Id == e.Id);
+            var currentConnection = connections.FirstOrDefault(c => c.TargetNumber == e.ResponderNumber); // identify by id
             
             if (currentConnection == null)
             {
@@ -37,12 +37,11 @@ namespace TelephoneExchangeLibrary.UnitOfWork
 
             ICallRecord callRecord = new CallRecord.CallRecord(callerContract.PhoneNumber,
                                                                 targetContract.PhoneNumber,
-                                                                DateTime.Now);
+                                                                DateTime.Now,
+                                                                currentConnection.Id);
 
             callerContract.CallHistory.Add(callRecord);
-
-            station.Ports.First(p => p.Id == callerContract.PortId);
-
+            targetContract.CallHistory.Add(callRecord);
         }
 
         public void HandleCall(CallEventArgs e)
@@ -67,7 +66,30 @@ namespace TelephoneExchangeLibrary.UnitOfWork
 
         }
 
-        
+        public void HandleReject(RejectEventArgs e)
+        {
+            var currentConnection = connections.FirstOrDefault(c => c.CallerNumber == e.CallerNumber);
+
+            if (currentConnection == null)
+            {
+                return;
+            }
+
+            IContract callerContract = phoneOperator.Clients
+                .SelectMany(c => c.Contracts)
+                .First(c => c.PhoneNumber == currentConnection.CallerNumber);
+
+            IContract targetContract = phoneOperator.Clients
+                .SelectMany(c => c.Contracts)
+                .First(c => c.PhoneNumber == currentConnection.TargetNumber);
+
+            
+
+            targetContract.CallHistory.First(c => c.Id == currentConnection.Id).EndCall(DateTime.Now);
+            callerContract.CallHistory.First(c => c.Id == currentConnection.Id).EndCall(DateTime.Now);
+        }
+
+
         /// <summary>
         /// Represents set of reasons why a call can or can't be started.
         /// </summary>

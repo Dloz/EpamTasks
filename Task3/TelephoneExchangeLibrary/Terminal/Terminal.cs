@@ -8,9 +8,9 @@ namespace TelephoneExchangeLibrary
     public class Terminal : ITerminal
     {
         public Guid Id { get; }
-        public int Number { get; private set; }
+        public int Number { get; set; }
 
-        //public event EventHandler<CallEventArgs> IncomingCallEvent;
+        public event EventHandler<CallEventArgs> IncomingCallEvent;
         public event EventHandler<CallEventArgs> OutgoingCallEvent;
         public event EventHandler<RespondEventArgs> RespondEvent;
         public event EventHandler<RejectEventArgs> RejectEvent;
@@ -22,10 +22,10 @@ namespace TelephoneExchangeLibrary
 
         public void IncomingCall(object sender, CallEventArgs e)
         {
-            throw new NotImplementedException(); // TODO Notify user about incoming call.
+            // TODO Notify user about incoming call.
         }
 
-        public void OutgoingCall(int targetNumber)
+        public void Call(int targetNumber)
         {
             OutgoingCallEvent?.Invoke(this, new CallEventArgs(Guid.NewGuid(), targetNumber));
         }
