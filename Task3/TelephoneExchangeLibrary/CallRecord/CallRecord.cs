@@ -36,6 +36,11 @@ namespace TelephoneExchangeLibrary.CallRecord
         /// </summary>
         public Guid Id { get; }
 
+        public CallRecord()
+        {
+            
+        }
+
         public CallRecord(int callerNumber, int targetNumber, DateTime startedAt, Guid id)
         {
             CallerNumber = callerNumber;

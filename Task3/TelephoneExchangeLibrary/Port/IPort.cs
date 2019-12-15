@@ -4,7 +4,7 @@ using TelephoneExchangeLibrary.Terminal;
 
 namespace TelephoneExchangeLibrary.Port
 {
-    public interface IPort: IIdentifiable
+    public interface IPort: IIdentifiable, IPortEvents
     {
         /// <summary>
         /// Represents terminal connected to the port.
@@ -15,26 +15,6 @@ namespace TelephoneExchangeLibrary.Port
         /// Represents current status of the port.
         /// </summary>
         PortStatus Status { get; }
-
-        /// <summary>
-        /// Event that reacts to the incoming calls.
-        /// </summary>
-        event EventHandler<CallEventArgs> IncomingCallEvent;
-        
-        /// <summary>
-        /// Event raised when outgoing calls occured.
-        /// </summary>
-        event EventHandler<CallEventArgs> OutgoingCallEvent;
-        
-        /// <summary>
-        /// Event raised when respond occured.
-        /// </summary>
-        event EventHandler<RespondEventArgs> RespondEvent;
-        
-        /// <summary>
-        /// Event raised when reject occured.
-        /// </summary>
-        event EventHandler<RejectEventArgs> RejectEvent;
     
         /// <summary>
         /// Notify about incoming call.

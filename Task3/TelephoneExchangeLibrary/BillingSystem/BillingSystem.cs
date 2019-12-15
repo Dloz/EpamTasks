@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TelephoneExchangeLibrary.BillingSystem.TariffPlan;
+using TelephoneExchangeLibrary.UnitOfWork;
 
 namespace TelephoneExchangeLibrary.BillingSystem
 {
@@ -15,7 +17,7 @@ namespace TelephoneExchangeLibrary.BillingSystem
         /// <summary>
         /// List of tariff plans.
         /// </summary>
-        public ICollection<ITariffPlan> TariffPlans => _tariffPlans;
+        public IEnumerable<ITariffPlan> TariffPlans => _tariffPlans.AsEnumerable();
 
         public BillingSystem()
         {

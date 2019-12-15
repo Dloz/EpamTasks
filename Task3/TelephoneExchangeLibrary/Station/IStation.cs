@@ -10,7 +10,7 @@ namespace TelephoneExchangeLibrary.Station
         /// <summary>
         /// Represents collection of ports.
         /// </summary>
-        ICollection<IPort> Ports { get; }
+        IEnumerable<IPort> Ports { get; }
         
         /// <summary>
         /// Represents method which connects terminal to the station.

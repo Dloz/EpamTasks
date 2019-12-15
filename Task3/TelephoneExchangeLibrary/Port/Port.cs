@@ -41,8 +41,18 @@ namespace TelephoneExchangeLibrary.Port
         /// </summary>
         public event EventHandler<RejectEventArgs> RejectEvent;
 
+        /// <summary>
+        /// Notification about connecting to the port.
+        /// </summary>
+        public event EventHandler<EventArgs> ConnectEvent;
+        /// <summary>
+        /// Notification about disconnecting from the port.
+        /// </summary>
+        public event EventHandler<EventArgs> DisconnectEvent;
+
         public Port()
         {
+            Status = PortStatus.Connected;
             Id = Guid.NewGuid();
         } 
 
@@ -52,6 +62,7 @@ namespace TelephoneExchangeLibrary.Port
         public void Connect(object sender, EventArgs e)
         {
             Status = PortStatus.Connected;
+            ConnectEvent?.Invoke(this, e);
         }
 
         /// <summary>
@@ -60,6 +71,7 @@ namespace TelephoneExchangeLibrary.Port
         public void Disconnect(object sender, EventArgs e)
         {
             Status = PortStatus.Disconnected;
+            DisconnectEvent?.Invoke(this, e);
         }
 
         /// <summary>
@@ -68,6 +80,8 @@ namespace TelephoneExchangeLibrary.Port
         public void ConnectTerminal(ITerminal terminal)
         {
             IncomingCallEvent += terminal.IncomingCall;
+            terminal.ConnectEvent += Connect;
+            terminal.DisconnectEvent += Disconnect;
             terminal.OutgoingCallEvent += OutgoingCall;
             terminal.RespondEvent += Respond;
             terminal.RejectEvent += Reject;

@@ -40,16 +40,45 @@ namespace TelephoneExchangeLibrary.Terminal
         /// Event raised when reject occured.
         /// </summary>
         public event EventHandler<RejectEventArgs> RejectEvent;
+        
+        /// <summary>
+        /// Notification about connecting to the port.
+        /// </summary>
+        public event EventHandler<EventArgs> ConnectEvent;
+        /// <summary>
+        /// Notification about disconnecting from the port.
+        /// </summary>
+        public event EventHandler<EventArgs> DisconnectEvent;
+        
 
         public Terminal()
         {
             Id = Guid.NewGuid();
         }
-
+        
+        /// <summary>
+        /// Notification about incoming call.
+        /// </summary>
         public void IncomingCall(object sender, CallEventArgs e)
         {
             _incomingCallId = e.Id;
-            IncomingCallEvent.Invoke(sender, e);
+            IncomingCallEvent?.Invoke(sender, e);
+        }
+
+        /// <summary>
+        /// Connects terminal to the port.
+        /// </summary>
+        public void Connect()
+        {
+            ConnectEvent?.Invoke(this, new EventArgs());
+        }
+
+        /// <summary>
+        /// Disconnects terminal from a port.
+        /// </summary>
+        public void Disconnect()
+        {
+            DisconnectEvent?.Invoke(this, new EventArgs());
         }
 
         public void Call(int targetNumber)
@@ -59,10 +88,6 @@ namespace TelephoneExchangeLibrary.Terminal
 
         public void Reject()
         {
-            if (_incomingCallId == Guid.Empty)
-            {
-                throw new NoIncomingCallException("Nothing to reject to.");
-            }
             RejectEvent?.Invoke(this, new RejectEventArgs(Number, _incomingCallId));
         }
 

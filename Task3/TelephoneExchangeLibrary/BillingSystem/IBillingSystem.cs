@@ -13,6 +13,6 @@ namespace TelephoneExchangeLibrary.BillingSystem
         /// <summary>
         /// List of tariff plans.
         /// </summary>
-        ICollection<ITariffPlan> TariffPlans { get; }
+        IEnumerable<ITariffPlan> TariffPlans { get; }
     }
 }

@@ -5,11 +5,15 @@ using TelephoneExchangeLibrary.BillingSystem;
 using TelephoneExchangeLibrary.BillingSystem.TariffPlan;
 using TelephoneExchangeLibrary.Client;
 using TelephoneExchangeLibrary.Station;
+using TelephoneExchangeLibrary.UnitOfWork;
+using TelephoneExchangeLibrary.UnitOfWork.Reporter;
+using TelephoneExchangeLibrary.UnitOfWork.Reporter.CallReport;
 
 namespace TelephoneExchangeLibrary.Operator
 {
     public class Operator : IOperator
     {
+        private readonly IReporterUnit _reporter;
         // Supposed that phone numbers are only 5-digit length
         private const int MinNumberValue = 00000;
         private const int MaxNumberValue = 99999; 
@@ -39,13 +43,14 @@ namespace TelephoneExchangeLibrary.Operator
             Clients = new List<IClient>();
         }
 
-        public Operator(IStation station, IBillingSystem billingSystem): this()
+        public Operator(IStation station, IBillingSystem billingSystem, IReporterUnit reporter): this()
         {
+            _reporter = reporter;
             Station = station;
             BillingSystem = billingSystem;
         }
 
-        public void SignContract(IClient client)
+        public void SignContract(IClient client, ITariffPlan tariffPlan)
         {
             if (client == null)
             {
@@ -54,8 +59,6 @@ namespace TelephoneExchangeLibrary.Operator
 
             //Create random number
             var phoneNumber = GeneratePhoneNumber();
-            //Create tariff plan
-            var tariffPlan = new TariffPlan(5);
 
             var terminal = new Terminal.Terminal();
             var port = Station.ConnectTerminal(terminal);
@@ -67,7 +70,20 @@ namespace TelephoneExchangeLibrary.Operator
 
             Clients.Add(client);
         }
-        
+
+        public void SignContract(IClient client)
+        {
+            //Create basic tariff plan
+            var tariffPlan = new StandartTariffPlan();
+            
+            SignContract(client, tariffPlan);
+        }
+
+        public ICollection<ICallReport> GetReport(IClient client)
+        {
+            return _reporter.GetReport(client);
+        }
+
         /// <summary>
         /// Generate unique phone number.
         /// </summary>

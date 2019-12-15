@@ -15,12 +15,15 @@ namespace TelephoneExchangeLibrary.Station
         /// </summary>
         private readonly ICallHandlerUnit _callHandler;
         
-        private IDictionary<int, IPort> _userPorts; // TODO contract - key. or contractId
+        /// <summary>
+        /// Represents current connected ports in the station.
+        /// </summary>
+        private readonly ICollection<IPort> _ports;
 
         /// <summary>
         /// Represents collection of ports.
         /// </summary>
-        public ICollection<IPort> Ports { get; private set; }
+        public IEnumerable<IPort> Ports => _ports.AsEnumerable();
 
         /// <summary>
         /// Station identifier.
@@ -30,7 +33,7 @@ namespace TelephoneExchangeLibrary.Station
         private Station()
         {
             Id = Guid.NewGuid();
-            Ports = new List<IPort>();
+            _ports = new List<IPort>();
         }
 
         public Station(ICallHandlerUnit callHandler): this()
@@ -48,15 +51,32 @@ namespace TelephoneExchangeLibrary.Station
             var port = new Port.Port();
             port.ConnectTerminal(terminal);
 
-            Ports.Add(port);
+            _ports.Add(port);
 
             port.IncomingCallEvent += terminal.IncomingCall;
             port.OutgoingCallEvent += HandleCall;
             port.RejectEvent += HandleReject;
             port.RespondEvent += HandleRespond;
+            port.ConnectEvent += Port_Connect;
+            port.DisconnectEvent += Port_Disconnect;
 
             return port;
 
+        }
+
+        private void Port_Connect(object sender, EventArgs e)
+        {
+            var port = ((IPort)sender);
+            if (!_ports.Contains(port))
+            {
+                _ports.Add(port);
+            }
+        }
+
+        private void Port_Disconnect(object sender, EventArgs e)
+        {
+            var port = ((IPort)sender);
+            _ports.Remove(port);
         }
 
         /// <summary>
@@ -65,7 +85,7 @@ namespace TelephoneExchangeLibrary.Station
         /// <param name="id">Port identifier.</param>
         public IPort GetPort(Guid id)
         {
-            return Ports.FirstOrDefault(p => p.Id == id);
+            return _ports.FirstOrDefault(p => p.Id == id);
         }
 
         private void HandleCall(object sender, CallEventArgs e)
