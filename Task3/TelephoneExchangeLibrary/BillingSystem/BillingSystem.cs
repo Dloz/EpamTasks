@@ -1,21 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TelephoneExchangeLibrary.BillingSystem.TariffPlan;
 
 namespace TelephoneExchangeLibrary.BillingSystem
 {
+    /// <summary>
+    /// Represents the system which send bills to clients.
+    /// </summary>
     public class BillingSystem : IBillingSystem
     {
-        public ICollection<ITariffPlan> TariffPlans { get; }
+        private readonly ICollection<ITariffPlan> _tariffPlans;
+
+        /// <summary>
+        /// List of tariff plans.
+        /// </summary>
+        public ICollection<ITariffPlan> TariffPlans => _tariffPlans;
 
         public BillingSystem()
         {
-            TariffPlans = new List<ITariffPlan>();
+            _tariffPlans = new List<ITariffPlan>();
         }
 
-        public BillingSystem(ICollection<ITariffPlan> tariffPlans)
+        public BillingSystem(ICollection<ITariffPlan> tariffPlans): this()
         {
-            TariffPlans = tariffPlans;
+            _tariffPlans = tariffPlans;
         }
     }
 }

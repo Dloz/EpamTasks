@@ -3,6 +3,9 @@ using System.Linq;
 using System.Threading;
 using TelephoneExchangeLibrary;
 using TelephoneExchangeLibrary.BillingSystem;
+using TelephoneExchangeLibrary.Client;
+using TelephoneExchangeLibrary.Operator;
+using TelephoneExchangeLibrary.Station;
 using TelephoneExchangeLibrary.UnitOfWork;
 
 namespace TelephoneExchangeConsole
@@ -11,7 +14,7 @@ namespace TelephoneExchangeConsole
     {
         static void Main(string[] args)
         {
-            CallHandlerUnit callHandler = new CallHandlerUnit();
+            var callHandler = new CallHandlerUnit();
             IBillingSystem billingSystem = new BillingSystem();
             IStation station = new Station(callHandler);
             IOperator phoneOperator = new Operator(station, billingSystem);

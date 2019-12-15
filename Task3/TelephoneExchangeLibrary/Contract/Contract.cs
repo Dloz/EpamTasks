@@ -1,26 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using TelephoneExchangeLibrary.BillingSystem.TariffPlan;
 using TelephoneExchangeLibrary.CallRecord;
+using TelephoneExchangeLibrary.Operator;
 
-namespace TelephoneExchangeLibrary
+namespace TelephoneExchangeLibrary.Contract
 {
     public class Contract : IContract
     {
+        /// <summary>
+        /// Represents tariff plan was chosen.
+        /// </summary>
         public ITariffPlan TariffPlan { get; }
 
-        public IOperator Operator { get; }
-
+        /// <summary>
+        /// Represents phone number.
+        /// </summary>
         public int PhoneNumber { get; }
-
+        
+        /// <summary>
+        /// Contract identifier.
+        /// </summary>
         public Guid Id { get; }
 
+        /// <summary>
+        /// Represents port identifier.
+        /// </summary>
         public Guid PortId { get; }
+        
+        /// <summary>
+        /// Represents station identifier.
+        /// </summary>
         public Guid StationId { get; }
-
+        
+        /// <summary>
+        /// Represents collection of call records.
+        /// </summary>
         public ICollection<ICallRecord> CallHistory { get; }
 
-        public Contract()
+        private Contract()
         {
             CallHistory = new List<ICallRecord>();
         }
@@ -29,7 +47,6 @@ namespace TelephoneExchangeLibrary
         {
             Id = Guid.NewGuid();
             TariffPlan = tariffPlan;
-            Operator = telephoneOperator;
             PhoneNumber = phoneNumber;
             PortId = portId;
             StationId = stationId;

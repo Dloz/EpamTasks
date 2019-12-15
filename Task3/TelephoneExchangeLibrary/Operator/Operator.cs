@@ -1,28 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TelephoneExchangeLibrary.BillingSystem;
+using TelephoneExchangeLibrary.BillingSystem.TariffPlan;
+using TelephoneExchangeLibrary.Client;
+using TelephoneExchangeLibrary.Station;
 
-namespace TelephoneExchangeLibrary
+namespace TelephoneExchangeLibrary.Operator
 {
     public class Operator : IOperator
     {
         // Supposed that phone numbers are only 5-digit length
-        private const int MIN_NUMBER_VALUE = 00000;
-        private const int MAX_NUMBER_VALUE = 99999; //MAX_NUM
+        private const int MinNumberValue = 00000;
+        private const int MaxNumberValue = 99999; 
         /// <summary>
         /// Represents registered phone numbers.
         /// </summary>
-        private IEnumerable<int> _registeredPhoneNumbers => Clients.SelectMany(c => c.Contracts).Select(c => c.PhoneNumber);
+        private IEnumerable<int> RegisteredPhoneNumbers => Clients.SelectMany(c => c.Contracts).Select(c => c.PhoneNumber);
+        
+        /// <summary>
+        /// Represents registered clients.
+        /// </summary>
         public ICollection<IClient> Clients { get; }
         public IStation Station { get; }
 
+        /// <summary>
+        /// Represents billing system connected to the operator.
+        /// </summary>
         public IBillingSystem BillingSystem { get; }
 
+        /// <summary>
+        /// Represents collection of station.
+        /// </summary>
         public ICollection<IStation> Stations { get; }
 
-        public Operator()
+        private Operator()
         {
             Clients = new List<IClient>();
         }
@@ -45,9 +57,9 @@ namespace TelephoneExchangeLibrary
             //Create tariff plan
             var tariffPlan = new TariffPlan(5);
 
-            var terminal = new Terminal();
+            var terminal = new Terminal.Terminal();
             var port = Station.ConnectTerminal(terminal);
-            var contract = new Contract(tariffPlan, this, phoneNumber, port.Id, Station.Id);
+            var contract = new Contract.Contract(tariffPlan, this, phoneNumber, port.Id, Station.Id);
             terminal.Number = contract.PhoneNumber;
 
             client.ReceiveTerminal(terminal);
@@ -55,21 +67,28 @@ namespace TelephoneExchangeLibrary
 
             Clients.Add(client);
         }
-
+        
+        /// <summary>
+        /// Generate unique phone number.
+        /// </summary>
+        /// <returns>unique phone number.</returns>
         private int GeneratePhoneNumber()
         {
-            var phoneNumber = new Random().Next(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE);
-            if (Clients.Count == 0)
+            while (true)
             {
+                var phoneNumber = new Random().Next(MinNumberValue, MaxNumberValue);
+                if (Clients.Count == 0)
+                {
+                    return phoneNumber;
+                }
+                // If number exists - generate new one.
+                if (RegisteredPhoneNumbers.Contains(phoneNumber))
+                {
+                    continue;
+                }
+
                 return phoneNumber;
             }
-
-            if (_registeredPhoneNumbers.Contains(phoneNumber))
-            {
-                return GeneratePhoneNumber();
-            }
-
-            return phoneNumber;
         }
     }
 }

@@ -2,18 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using TelephoneExchangeLibrary.EventsArgs;
+using TelephoneExchangeLibrary.Port;
+using TelephoneExchangeLibrary.Terminal;
+using TelephoneExchangeLibrary.UnitOfWork;
 
-namespace TelephoneExchangeLibrary
+namespace TelephoneExchangeLibrary.Station
 {
     public class Station : IStation
     {
-        private ICallHandlerUnit callHandler;
-        private IDictionary<int, IPort> userPorts; // contract - key. or contractId
+        /// <summary>
+        /// Unit to handle calls inside the station.
+        /// </summary>
+        private readonly ICallHandlerUnit _callHandler;
+        
+        private IDictionary<int, IPort> _userPorts; // TODO contract - key. or contractId
+
+        /// <summary>
+        /// Represents collection of ports.
+        /// </summary>
         public ICollection<IPort> Ports { get; private set; }
 
+        /// <summary>
+        /// Station identifier.
+        /// </summary>
         public Guid Id { get; }
 
-        public Station()
+        private Station()
         {
             Id = Guid.NewGuid();
             Ports = new List<IPort>();
@@ -21,12 +35,17 @@ namespace TelephoneExchangeLibrary
 
         public Station(ICallHandlerUnit callHandler): this()
         {
-            this.callHandler = callHandler;
+            this._callHandler = callHandler;
         }
-
+        
+        /// <summary>
+        /// Connects terminal to the port.
+        /// </summary>
+        /// <param name="terminal">Terminal to be connected.</param>
+        /// <returns>Port which terminal connected in.</returns>
         public IPort ConnectTerminal(ITerminal terminal)
         {
-            var port = new Port();
+            var port = new Port.Port();
             port.ConnectTerminal(terminal);
 
             Ports.Add(port);
@@ -40,6 +59,10 @@ namespace TelephoneExchangeLibrary
 
         }
 
+        /// <summary>
+        /// Receive port from the station.
+        /// </summary>
+        /// <param name="id">Port identifier.</param>
         public IPort GetPort(Guid id)
         {
             return Ports.FirstOrDefault(p => p.Id == id);
@@ -47,16 +70,16 @@ namespace TelephoneExchangeLibrary
 
         private void HandleCall(object sender, CallEventArgs e)
         {
-            callHandler.HandleCall(e);
+            _callHandler.HandleCall(e);
         }
 
         private void HandleReject(object sender, RejectEventArgs e)
         {
-            callHandler.HandleReject(e);
+            _callHandler.HandleReject(e);
         }
         private void HandleRespond(object sender, RespondEventArgs e)
         {
-            callHandler.HandleRespond(e);
+            _callHandler.HandleRespond(e);
         }
     }
 }

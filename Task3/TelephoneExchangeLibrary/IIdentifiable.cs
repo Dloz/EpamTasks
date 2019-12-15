@@ -6,6 +6,9 @@ namespace TelephoneExchangeLibrary
 {
     public interface IIdentifiable
     {
+        /// <summary>
+        /// Identifier.
+        /// </summary>
         Guid Id { get; }
     }
 }

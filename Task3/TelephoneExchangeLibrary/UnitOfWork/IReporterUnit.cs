@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TelephoneExchangeLibrary
+﻿namespace TelephoneExchangeLibrary.UnitOfWork
 {
     public interface IReporterUnit
     {

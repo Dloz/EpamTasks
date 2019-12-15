@@ -6,28 +6,28 @@ namespace TelephoneExchangeLibrary.UnitOfWork
 {
     public class ConnectionModel
     {
-        private ValueTuple<int, int, Guid> connectionTuple;
+        private readonly ValueTuple<int, int, Guid> _connectionTuple;
 
-        public int CallerNumber => connectionTuple.Item1;
-        public int TargetNumber => connectionTuple.Item2;
+        public int CallerNumber => _connectionTuple.Item1;
+        public int TargetNumber => _connectionTuple.Item2;
 
-        public Guid Id => connectionTuple.Item3;
+        public Guid Id => _connectionTuple.Item3;
 
-        public ConnectionModel()
+        private ConnectionModel()
         {
-            connectionTuple = new ValueTuple<int, int, Guid>();
+            _connectionTuple = new ValueTuple<int, int, Guid>();
         }
 
         public ConnectionModel(ValueTuple<int, int, Guid> connectionTuple): this()
         {
-            this.connectionTuple = connectionTuple;
+            this._connectionTuple = connectionTuple;
         }
 
         public ConnectionModel(int callerNumber, int targetNumber, Guid id): this()
         {
-            connectionTuple.Item1 = callerNumber;
-            connectionTuple.Item2 = targetNumber;
-            connectionTuple.Item3 = id;
+            _connectionTuple.Item1 = callerNumber;
+            _connectionTuple.Item2 = targetNumber;
+            _connectionTuple.Item3 = id;
         }
     }
 }

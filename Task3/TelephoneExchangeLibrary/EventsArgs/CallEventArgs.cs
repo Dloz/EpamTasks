@@ -6,6 +6,9 @@ namespace TelephoneExchangeLibrary.EventsArgs
 {
     public class CallEventArgs: EventArgs, IIdentifiable
     {
+        /// <summary>
+        /// Call identifier.
+        /// </summary>
         public Guid Id { get; }
         /// <summary>
         /// Represents id of the port which calling.

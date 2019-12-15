@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TelephoneExchangeLibrary.EventsArgs;
+﻿using TelephoneExchangeLibrary.EventsArgs;
 
-namespace TelephoneExchangeLibrary
+namespace TelephoneExchangeLibrary.UnitOfWork
 {
     public interface ICallHandlerUnit
     {

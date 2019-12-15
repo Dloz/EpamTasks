@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 using TelephoneExchangeLibrary.BillingSystem;
+using TelephoneExchangeLibrary.Operator;
+using TelephoneExchangeLibrary.Station;
 
 namespace TelephoneExchangeLibrary.UnitOfWork
 {
     public abstract class UnitOfWork
     {
-        protected IStation station;
-        protected IBillingSystem billingSystem;
-        protected IOperator phoneOperator;
+        protected IStation Station;
+        protected IBillingSystem BillingSystem;
+        protected IOperator PhoneOperator;
 
         public void RegisterStation(IStation station)
         {
             if (station != null)
             {
-                this.station = station; 
+                this.Station = station; 
             }
         }
 
@@ -23,7 +25,7 @@ namespace TelephoneExchangeLibrary.UnitOfWork
         {
             if (billingSystem != null)
             {
-                this.billingSystem = billingSystem; 
+                this.BillingSystem = billingSystem; 
             }
         }
 
@@ -31,7 +33,7 @@ namespace TelephoneExchangeLibrary.UnitOfWork
         {
             if (phoneOperator != null)
             {
-                this.phoneOperator = phoneOperator; 
+                this.PhoneOperator = phoneOperator; 
             }
         }
     }
