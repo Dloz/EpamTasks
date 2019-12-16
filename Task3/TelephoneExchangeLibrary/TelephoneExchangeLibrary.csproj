@@ -5,7 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="CallRecord\UserCallRecord.cs" />
+    <Compile Remove="Models\Operator\**" />
+    <Compile Remove="Models\Station\**" />
+    <Compile Remove="Models\Terminal\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Models\Operator\**" />
+    <EmbeddedResource Remove="Models\Station\**" />
+    <EmbeddedResource Remove="Models\Terminal\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Models\Operator\**" />
+    <None Remove="Models\Station\**" />
+    <None Remove="Models\Terminal\**" />
   </ItemGroup>
 
 </Project>

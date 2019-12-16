@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TelephoneExchangeLibrary.Interfaces;
 
 namespace TelephoneExchangeLibrary.EventsArgs
 {
     public class CallEventArgs: EventArgs, IIdentifiable
     {
+        // property CallRecord
         /// <summary>
         /// Call identifier.
         /// </summary>
