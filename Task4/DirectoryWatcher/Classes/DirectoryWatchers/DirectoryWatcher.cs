@@ -1,4 +1,6 @@
-﻿using DirectoryWatcher.Interfaces.FileProcessing;
+﻿using DirectoryWatcher.Interfaces.DirectoryWatchers;
+using DirectoryWatcher.Interfaces.FileProcessing;
+using DirectoryWatcher.Interfaces.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,7 +8,7 @@ using System.Text;
 
 namespace DirectoryWatcher.DirectoryWatchers
 {
-    public class DirectoryWatcher
+    public class DirectoryWatcher: IDirectoryWatcher
     {
         private FileSystemWatcher _fileSystemWatcher;
 
@@ -31,7 +33,7 @@ namespace DirectoryWatcher.DirectoryWatchers
             }
             catch (ArgumentException)
             {
-                _logger.WriteLine("Check out Path to Directory to Track in AppConfig file.");
+                _logger.WriteLine("Check out Path to Directory to Track in Config.");
             }
         }
 
@@ -45,7 +47,7 @@ namespace DirectoryWatcher.DirectoryWatchers
             }
             catch (ArgumentNullException)
             {
-                _logger.WriteLine("Set Path to Directory to Track in AppConfig file.");
+                _logger.WriteLine("Set Path to Directory to Track in Config.");
             }
             catch (Exception)
             {

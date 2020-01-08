@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DirectoryWatcher.Interfaces.FileProcessing
 {
-    interface IFileProcessor
+    public interface IFileProcessor
     {
         void ProcessFile(object source, FileSystemEventArgs e);
     }
