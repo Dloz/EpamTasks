@@ -12,6 +12,6 @@ namespace SalesInfoService.DataAccess.Interfaces.Repositories
 
         void AddUniqueClientToDatabase(Client client);
 
-        int? GetId(string clientFirstName, string clientLastName);
+        int GetId(string clientFirstName, string clientLastName);
     }
 }

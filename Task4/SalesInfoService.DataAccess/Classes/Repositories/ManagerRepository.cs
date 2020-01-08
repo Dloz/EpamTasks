@@ -26,7 +26,7 @@ namespace SalesInfoService.DAL.Classes.Repositories
             Add(manager);
         }
 
-        public int? GetId(string managerLastName)
+        public int GetId(string managerLastName)
         {
             Expression<Func<Manager, bool>> predicate = x => x.LastName == managerLastName;
 

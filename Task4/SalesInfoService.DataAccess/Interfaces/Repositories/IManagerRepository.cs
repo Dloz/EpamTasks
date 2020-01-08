@@ -12,6 +12,6 @@ namespace SalesInfoService.DataAccess.Interfaces.Repositories
 
         void AddUniqueManagerToDatabase(Manager manager);
 
-        int? GetId(string managerLastName);
+        int GetId(string managerLastName);
     }
 }

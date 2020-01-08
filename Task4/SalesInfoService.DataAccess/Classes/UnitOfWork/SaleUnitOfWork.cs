@@ -30,7 +30,7 @@ namespace SalesInfoService.DataAccess.Classes.UnitOfWork
             _context = context;
             _locker = locker;
             
-            var mapper = AutoMapper.CreateConfiguration().CreateMapper();
+            _mapper = AutoMapper.CreateConfiguration().CreateMapper();
             _clients = new ClientRepository(_context);
             _managers = new ManagerRepository(_context);
             _products = new ProductRepository(_context);
@@ -44,26 +44,30 @@ namespace SalesInfoService.DataAccess.Classes.UnitOfWork
             {
                 foreach (var sale in sales)
                 {
-                    
-                }
-                foreach (var sale in sales)
-                {
-                    _clients.AddUniqueCustomerToDatabase(sale.Client);
-                    _clients.Save();
+                    if (!_clients.IsClientExists(sale.Client))
+                    {
+                        // TODO
+                    }
+
+                    if (!_managers.IsManagerExists(sale.Manager))
+                    {
+                        // TODO
+                    }
+
+                    if (!_products.IsProductExists(sale.Product))
+                    {
+                        // TODO
+                    }
+
                     sale.Client.Id = _clients.GetId(sale.Client.FirstName, sale.Client.LastName);
-
-                    _managers.AddUniqueManagerToDatabase(sale.Manager);
-                    _managers.Save();
                     sale.Manager.Id = _managers.GetId(sale.Manager.LastName);
-
-                    _products.AddUniqueProductToDatabase(sale.Product);
-                    _products.Save();
                     sale.Product.Id = _products.GetId(sale.Product.Name);
 
                     _sales.Add(sale);
                     _sales.Save();
                 }
             }
+
             finally
             {
                 _locker.ExitWriteLock();

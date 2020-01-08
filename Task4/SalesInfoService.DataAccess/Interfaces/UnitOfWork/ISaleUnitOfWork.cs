@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SalesInfoService.DataAccess.Interfaces.UnitOfWork
 {
-    interface ISaleUnitOfWork
+    public interface ISaleUnitOfWork
     {
         void Add(params Sale[] models);
 

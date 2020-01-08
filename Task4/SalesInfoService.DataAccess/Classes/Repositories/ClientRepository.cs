@@ -26,7 +26,7 @@ namespace SalesInfoService.DAL.Classes.Repositories
             Add(client);
         }
 
-        public int? GetId(string clientFirstName, string clientLastName)
+        public int GetId(string clientFirstName, string clientLastName)
         {
             Expression<Func<Client, bool>> predicate = x =>
                 x.FirstName == clientFirstName && x.LastName == clientLastName;

@@ -1,7 +1,9 @@
-﻿using DirectoryWatcher.Interfaces.FileProcessing;
+﻿using CsvHelper;
+using DirectoryWatcher.Interfaces.FileProcessing;
 using DirectoryWatcher.Interfaces.Logging;
 using DirectoryWatcher.Models;
 using SalesInfoService.BLL.Classes.DataTransferObjects;
+using SalesInfoService.DataAccess.Interfaces.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using IParser = DirectoryWatcher.Interfaces.FileProcessing.IParser;
 
 namespace DirectoryWatcher.Classes.FileProcessing
 {
@@ -20,7 +23,7 @@ namespace DirectoryWatcher.Classes.FileProcessing
         private IParser Parser { get; }
         private ILogger Logger { get; }
 
-        public FileHandler(ISaleUnitOfWork saleUnitOfWork, IParser parser, ILogger logger, ReaderWriterLockSlim locker)
+        public FileProcessor(ISaleUnitOfWork saleUnitOfWork, IParser parser, ILogger logger, ReaderWriterLockSlim locker)
         {
             SaleUnitOfWork = saleUnitOfWork;
             Parser = parser;
@@ -81,7 +84,8 @@ namespace DirectoryWatcher.Classes.FileProcessing
 
         private void WriteToDatabase(IEnumerable<FileContentModel> sales, string managerLastName)
         {
-            SaleUnitOfWork.Add(CreateDataTransferObjects(sales, managerLastName).ToArray());
+            var dtos = CreateDataTransferObjects(sales, managerLastName).ToArray();
+            SaleUnitOfWork.Add();
         }
 
         private IEnumerable<SaleDto> CreateDataTransferObjects(IEnumerable<FileContentModel> fileContents,

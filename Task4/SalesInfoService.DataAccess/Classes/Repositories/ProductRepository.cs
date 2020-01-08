@@ -26,7 +26,7 @@ namespace SalesInfoService.DAL.Classes.Repositories
             Add(product);
         }
 
-        public int? GetId(string productName)
+        public int GetId(string productName)
         {
             Expression<Func<Product, bool>> predicate = x => x.Name == productName;
 

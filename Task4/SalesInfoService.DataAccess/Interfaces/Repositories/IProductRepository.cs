@@ -12,6 +12,6 @@ namespace SalesInfoService.DataAccess.Interfaces.Repositories
 
         void AddUniqueProductToDatabase(Product product);
 
-        int? GetId(string productName);
+        int GetId(string productName);
     }
 }
