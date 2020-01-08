@@ -8,6 +8,8 @@ namespace SalesInfoService.DataAccess.Interfaces.Repositories
 {
     interface IManagerRepository: IGenericRepository<Manager>
     {
+        bool IsManagerExists(Manager manager);
+
         void AddUniqueManagerToDatabase(Manager manager);
 
         int? GetId(string managerLastName);

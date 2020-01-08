@@ -8,6 +8,8 @@ namespace SalesInfoService.DataAccess.Interfaces.Repositories
 {
     interface IProductRepository : IGenericRepository<Product>
     {
+        bool IsProductExists(Product product);
+
         void AddUniqueProductToDatabase(Product product);
 
         int? GetId(string productName);

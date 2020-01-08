@@ -32,5 +32,12 @@ namespace SalesInfoService.DAL.Classes.Repositories
 
             return Find(predicate).First().Id;
         }
+
+        public bool IsManagerExists(Manager manager)
+        {
+            Expression<Func<Manager, bool>> predicate = x =>
+                x.Id == manager.Id;
+            return Find(predicate).Any();
+        }
     }
 }

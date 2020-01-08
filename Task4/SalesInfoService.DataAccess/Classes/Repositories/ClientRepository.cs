@@ -33,5 +33,12 @@ namespace SalesInfoService.DAL.Classes.Repositories
 
             return Find(predicate).First().Id;
         }
+
+        public bool IsClientExists(Client client)
+        {
+            Expression<Func<Client, bool>> predicate = x =>
+                x.Id == client.Id;
+            return Find(predicate).Any();
+        }
     }
 }

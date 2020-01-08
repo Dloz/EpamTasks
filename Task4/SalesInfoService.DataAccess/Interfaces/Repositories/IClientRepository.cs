@@ -8,6 +8,8 @@ namespace SalesInfoService.DataAccess.Interfaces.Repositories
 {
     interface IClientRepository: IGenericRepository<Client>
     {
+        bool IsClientExists(Client client);
+
         void AddUniqueClientToDatabase(Client client);
 
         int? GetId(string clientFirstName, string clientLastName);

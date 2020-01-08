@@ -1,5 +1,6 @@
 ﻿
 using SalesInfoService.DataAccess.Classes.SalesDbContext;
+using SalesInfoService.DataAccess.Interfaces.Repositories;
 using SalesInfoService.DataAccess.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Text;
 
 namespace SalesInfoService.DAL.Classes.Repositories
 {
-    class ProductRepository: GenericRepository<Product>
+    class ProductRepository: GenericRepository<Product>, IProductRepository
     {
         public ProductRepository(SalesInfoContext context) : base(context)
         {
@@ -30,6 +31,13 @@ namespace SalesInfoService.DAL.Classes.Repositories
             Expression<Func<Product, bool>> predicate = x => x.Name == productName;
 
             return Find(predicate).First().Id;
+        }
+
+        public bool IsProductExists(Product product)
+        {
+            Expression<Func<Product, bool>> predicate = x =>
+                x.Id == product.Id;
+            return Find(predicate).Any();
         }
     }
 }
