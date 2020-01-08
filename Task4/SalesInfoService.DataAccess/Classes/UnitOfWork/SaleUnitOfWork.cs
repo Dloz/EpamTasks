@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace SalesInfoService.DataAccess.Classes.UnitOfWork
 {
-    class SaleUnitOfWork: ISaleUnitOfWork
+    public class SaleUnitOfWork: ISaleUnitOfWork
     {
 
         private SalesInfoContext _context;
