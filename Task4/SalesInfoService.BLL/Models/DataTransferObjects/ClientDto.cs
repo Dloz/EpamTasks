@@ -4,10 +4,17 @@ using System.Text;
 
 namespace SalesInfoService.BLL.Classes.DataTransferObjects
 {
-    class ClientDto : DataTransferObject
+    public class ClientDto : DataTransferObject
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public ClientDto(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
 
     }
 }

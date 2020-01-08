@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SalesInfoService.DAL.Interfaces.Repositories;
 using SalesInfoService.DataAccess.Classes.SalesDbContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Linq.Expressions;
 
 namespace SalesInfoService.DAL.Classes.Repositories
 {
-    public class GenericRepository<TEntity> where TEntity: class
+    public class GenericRepository<TEntity>: IGenericRepository<TEntity> where TEntity: class
     {
         protected readonly SalesInfoContext _context;
         protected readonly DbSet<TEntity> _dbSet;
@@ -17,36 +18,52 @@ namespace SalesInfoService.DAL.Classes.Repositories
             _context = context;
             _dbSet = context.Set<TEntity>();
         }
+               
 
-        public IEnumerable<TEntity> Get()
+        public void Add(params TEntity[] models)
         {
-            return _dbSet.AsNoTracking().ToList();
+            foreach (var item in models)
+            {
+                _dbSet.Add(item);
+                _context.SaveChanges();
+            }
         }
 
-        public IEnumerable<TEntity> Get(Func<TEntity, bool> predicate)
+        public void Update(params TEntity[] entities)
         {
-            return _dbSet.AsNoTracking().Where(predicate).ToList();
+            foreach (var item in entities)
+            {
+                _context.Entry(item).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
         }
 
-        public TEntity FindById(int id)
+        public void Remove(params TEntity[] entities)
+        {
+            foreach (var item in entities)
+            {
+                _dbSet.Remove(item);
+                _context.SaveChanges();
+            }
+        }
+
+        public TEntity Get(int id)
         {
             return _dbSet.Find(id);
         }
 
-        public void Create(TEntity item)
+        public IEnumerable<TEntity> GetAll()
         {
-            _dbSet.Add(item);
-            _context.SaveChanges();
+            return _dbSet.AsNoTracking();
         }
 
-        public void Update(TEntity item)
+        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
-            _context.Entry(item).State = EntityState.Modified;
-            _context.SaveChanges();
+            return _dbSet.AsNoTracking().Where(predicate);
         }
-        public void Remove(TEntity item)
+
+        public void Save()
         {
-            _dbSet.Remove(item);
             _context.SaveChanges();
         }
     }

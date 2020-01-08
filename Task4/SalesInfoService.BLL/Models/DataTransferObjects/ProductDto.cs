@@ -4,8 +4,14 @@ using System.Text;
 
 namespace SalesInfoService.BLL.Classes.DataTransferObjects
 {
-    class ProductDto : DataTransferObject
+    public class ProductDto : DataTransferObject
     {
         public string Name { get; set; }
+
+        public ProductDto(string name)
+        {
+            Name = name;
+        }
+
     }
 }

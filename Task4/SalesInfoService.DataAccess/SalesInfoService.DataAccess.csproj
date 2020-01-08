@@ -9,7 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SalesInfoService.BLL\SalesInfoService.BLL.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,15 @@
-﻿using System;
+﻿using SalesInfoService.DAL.Interfaces.Repositories;
+using SalesInfoService.DataAccess.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SalesInfoService.DataAccess.Interfaces.Repositories
 {
-    interface IClientRepository
+    interface IClientRepository: IGenericRepository<Client>
     {
+        void AddUniqueClientToDatabase(Client client);
+
+        int? GetId(string clientFirstName, string clientLastName);
     }
 }
