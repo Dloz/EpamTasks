@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DirectoryWatcher.DirectoryWatchers
+namespace DirectoryWatcher.Classes.FileProcessing
 {
-    class DirectoryWatcher
+    class Parser
     {
     }
 }
