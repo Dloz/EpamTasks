@@ -1,8 +1,11 @@
-﻿using DirectoryWatcher.Interfaces.FileProcessing;
+﻿using CsvHelper;
+using DirectoryWatcher.Interfaces.FileProcessing;
 using DirectoryWatcher.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using IParser = DirectoryWatcher.Interfaces.FileProcessing.IParser;
 
 namespace DirectoryWatcher.Classes.FileProcessing
 {
@@ -10,12 +13,25 @@ namespace DirectoryWatcher.Classes.FileProcessing
     {
         public IEnumerable<FileContentModel> ParseFile(string filePath)
         {
-            throw new NotImplementedException();
+            using (var streamReader = new StreamReader(filePath))
+            {
+                var csvReader = new CsvReader(streamReader);
+
+                foreach (var record in csvReader.GetRecords<FileContentModel>())
+                {
+                    yield return record.Product != string.Empty &&
+                                 record.Customer != string.Empty &&
+                                 record.Date != string.Empty &&
+                                 record.Sum != string.Empty
+                        ? record
+                        : throw new FormatException("File Should Not Contain Empty Fields");
+                }
+            }
         }
 
-        public IList<string> ParseLine(string fileName, char separator)
+        public IList<string> ParseLine(string line, char separator)
         {
-            throw new NotImplementedException();
+            return line.Split(separator);
         }
     }
 }

@@ -3,7 +3,6 @@ using DirectoryWatcher.Classes.Logging;
 using DirectoryWatcher.Interfaces.DirectoryWatchers;
 using DirectoryWatcher.Interfaces.FileProcessing;
 using DirectoryWatcher.Interfaces.Logging;
-using SalesInfoService.BLL.Classes.DataTransferObjects;
 using SalesInfoService.DataAccess.Classes.SalesDbContext;
 using SalesInfoService.DataAccess.Classes.UnitOfWork;
 using SalesInfoService.DataAccess.Interfaces.UnitOfWork;
@@ -16,7 +15,7 @@ using SalesInfoService.DataAccess.Models;
 
 namespace DirectoryWatcher
 {
-    class Facade
+    public class Facade
     {
         private SalesInfoContext _context;
         private ReaderWriterLockSlim _locker;

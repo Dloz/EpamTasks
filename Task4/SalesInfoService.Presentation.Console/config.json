@@ -1,0 +1,8 @@
+{
+  "directoryPath": "..\\..\\..\\SalesStatisticsService.Files\\CSV Files\\",
+  "filesPathForLogging": "..\\..\\..\\SalesStatisticsService.Files\\Log Files\\log.txt",
+  "filesFilter": "*.csv",
+  "fileNameSplitter": "_",
+  "customerNameSplitter": " ",
+  "dateFormat": "dd.MM.yyyy"
+}

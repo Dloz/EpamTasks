@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SalesInfoService.BLL\SalesInfoService.BLL.csproj" />
     <ProjectReference Include="..\SalesInfoService.DataAccess\SalesInfoService.DataAccess.csproj" />
   </ItemGroup>
 
