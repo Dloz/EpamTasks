@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using SalesInfoService.BLL.Classes.DataTransferObjects;
 using SalesInfoService.DataAccess.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SalesInfoService.DataAccess.Classes
+namespace SalesInfoService.BLL.Classes.AutoMapper
 {
     internal static class AutoMapper
     {

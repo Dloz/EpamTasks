@@ -7,20 +7,20 @@ using System.Text;
 
 namespace SalesInfoService.BLL
 {
-    class Facade
+    public class Facade
     {
         private DirectoryWatcherConfig _config;
         private DirectoryWatcher.Facade _facade;
 
         public Facade(string configFilePath = "../../config.json")
         {
-            string json = string.Empty;
+            var json = string.Empty;
             using (var reader = new StreamReader(configFilePath))
             {
                 json = reader.ReadToEnd();
             }
             _config = new DirectoryWatcherConfig(JsonConvert.DeserializeObject<Dictionary<string, string>>(json));
-            _facade = new DirectoryWatcher.Facade(_config["directoryPath"], _config["filesFilter"]);
+            _facade = new DirectoryWatcher.Facade(_config);
         }
 
         public void Run()

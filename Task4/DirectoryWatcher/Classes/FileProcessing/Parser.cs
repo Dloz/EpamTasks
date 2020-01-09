@@ -20,7 +20,7 @@ namespace DirectoryWatcher.Classes.FileProcessing
                 foreach (var record in csvReader.GetRecords<FileContentModel>())
                 {
                     yield return record.Product != string.Empty &&
-                                 record.Customer != string.Empty &&
+                                 record.Client != string.Empty &&
                                  record.Date != string.Empty &&
                                  record.Sum != string.Empty
                         ? record

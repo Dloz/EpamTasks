@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using DirectoryWatcher.Classes.Config;
 using SalesInfoService.DataAccess.Models;
 
 namespace DirectoryWatcher
@@ -26,7 +27,7 @@ namespace DirectoryWatcher
         private ILogger _logger;
         private IFileProcessor _fileProcessor;
 
-        public Facade(string directoryPath, string filesFilter)
+        public Facade(DirectoryWatcherConfig config)
         {
             _context = new SalesInfoContext();
 
@@ -34,13 +35,13 @@ namespace DirectoryWatcher
 
             _logger = new Logger();
 
-            _directoryWatcher = new DirectoryWatchers.DirectoryWatcher(directoryPath, filesFilter, _logger);
+            _directoryWatcher = new DirectoryWatchers.DirectoryWatcher(config["directoryPath"],config["filesFilter"], _logger);
 
             _saleUnitOfWork = new SaleUnitOfWork(_context, _locker);
 
             _parser = new Parser();
 
-            _fileProcessor = new FileProcessor(_saleUnitOfWork, _parser, _logger, _locker);
+            _fileProcessor = new FileProcessor(_saleUnitOfWork, _parser, _logger, _locker, config);
         }
 
         public void Run()

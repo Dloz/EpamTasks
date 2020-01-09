@@ -1,4 +1,4 @@
-﻿using SalesInfoService.BLL.Classes.DataTransferObjects;
+﻿
 using SalesInfoService.DataAccess.Models;
 using System;
 using System.Collections.Generic;

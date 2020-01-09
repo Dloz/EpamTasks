@@ -3,7 +3,6 @@ using DirectoryWatcher.Interfaces.FileProcessing;
 using DirectoryWatcher.Interfaces.Logging;
 using DirectoryWatcher.Classes.Config;
 using DirectoryWatcher.Models;
-using SalesInfoService.BLL.Classes.DataTransferObjects;
 using SalesInfoService.DataAccess.Interfaces.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -12,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SalesInfoService.DataAccess.Models;
 using IParser = DirectoryWatcher.Interfaces.FileProcessing.IParser;
 
 namespace DirectoryWatcher.Classes.FileProcessing
@@ -91,22 +91,29 @@ namespace DirectoryWatcher.Classes.FileProcessing
             _saleUnitOfWork.Add();
         }
 
-        private IEnumerable<SaleDto> CreateDataTransferObjects(IEnumerable<FileContentModel> fileContents,
+        private IEnumerable<Sale> CreateDataTransferObjects(IEnumerable<FileContentModel> fileContents,
             string managerLastName)
         {
             try
             {
                 var dateFormat = _config["dateFormat"];
-                var customerNameSplitter = char.Parse(_config["customerNameSplitter"]);
+                var clientNameSplitter = char.Parse(_config["customerNameSplitter"]);
 
                 return (from fileContent in fileContents
                         let date = DateTime.ParseExact(fileContent.Date, dateFormat, null)
-                        let customerName = _parser.ParseLine(fileContent.Customer, customerNameSplitter)
-                        let customerDto = new ClientDto(customerName[0], customerName[1])
-                        let productDto = new ProductDto(fileContent.Product)
+                        let clientName = _parser.ParseLine(fileContent.Client, clientNameSplitter)
+                        let client = new Client {FirstName =  clientName[0], LastName = clientName[1]}
+                        let product = new Product {Name = fileContent.Product}
                         let sum = decimal.Parse(fileContent.Sum)
-                        let managerDto = new ManagerDto(managerLastName)
-                        select new SaleDto(date, customerDto, productDto, sum, managerDto))
+                        let manager = new Manager {LastName = managerLastName}
+                        select new Sale
+                        {
+                            Date = date, 
+                            Client = client, 
+                            Product = product,
+                            Cost = sum, 
+                            Manager = manager
+                        })
                     .ToList();
             }
             catch (ArgumentOutOfRangeException)

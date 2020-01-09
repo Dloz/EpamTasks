@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using SalesInfoService.BLL.Classes.DataTransferObjects;
 using SalesInfoService.DAL.Classes.Repositories;
 using SalesInfoService.DataAccess.Classes.SalesDbContext;
 using SalesInfoService.DataAccess.Interfaces.Repositories;
@@ -23,14 +22,12 @@ namespace SalesInfoService.DataAccess.Classes.UnitOfWork
         private IProductRepository _products;
         private ISaleRepository _sales;
 
-        private IMapper _mapper;
 
         public SaleUnitOfWork(SalesInfoContext context, ReaderWriterLockSlim locker)
         {
             _context = context;
             _locker = locker;
             
-            _mapper = AutoMapper.CreateConfiguration().CreateMapper();
             _clients = new ClientRepository(_context);
             _managers = new ManagerRepository(_context);
             _products = new ProductRepository(_context);
