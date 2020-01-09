@@ -1,6 +1,7 @@
 ﻿using CsvHelper;
 using DirectoryWatcher.Interfaces.FileProcessing;
 using DirectoryWatcher.Interfaces.Logging;
+using DirectoryWatcher.Classes.Config;
 using DirectoryWatcher.Models;
 using SalesInfoService.BLL.Classes.DataTransferObjects;
 using SalesInfoService.DataAccess.Interfaces.UnitOfWork;
@@ -17,33 +18,35 @@ namespace DirectoryWatcher.Classes.FileProcessing
 {
     internal class FileProcessor : IFileProcessor
     {
-        private ReaderWriterLockSlim Locker { get; }
+        private ReaderWriterLockSlim _locker;
 
-        private ISaleUnitOfWork SaleUnitOfWork { get; }
-        private IParser Parser { get; }
-        private ILogger Logger { get; }
+        private ISaleUnitOfWork _saleUnitOfWork;
+        private IParser _parser;
+        private ILogger _logger;
+        private DirectoryWatcherConfig _config;
 
-        public FileProcessor(ISaleUnitOfWork saleUnitOfWork, IParser parser, ILogger logger, ReaderWriterLockSlim locker)
+        public FileProcessor(ISaleUnitOfWork saleUnitOfWork, IParser parser, ILogger logger, ReaderWriterLockSlim locker, DirectoryWatcherConfig config)
         {
-            SaleUnitOfWork = saleUnitOfWork;
-            Parser = parser;
-            Logger = logger;
-            Locker = locker;
+            _saleUnitOfWork = saleUnitOfWork;
+            _parser = parser;
+            _logger = logger;
+            _locker = locker;
+            _config = config;
         }
 
         public void ProcessFile(object source, FileSystemEventArgs e)
         {
             
-            Logger.WriteLine($"{e.Name} Has Been Added to Directory.");
-            var fileNameSplitter = char.Parse(ConfigurationManager.AppSettings["fileNameSplitter"]);
+            _logger.WriteLine($"{e.Name} Has Been Added to Directory.");
+            var fileNameSplitter = char.Parse(_config["fileNameSplitter"]);
 
             Task.Run(() =>
             {
                 try
                 {
                     WriteToDatabase(
-                        Parser.ParseFile(e.FullPath),
-                        Parser.ParseLine(e.Name, fileNameSplitter).First());
+                        _parser.ParseFile(e.FullPath),
+                        _parser.ParseLine(e.Name, fileNameSplitter).First());
 
                     Log($"{e.Name} Was Successfully Added to Database");
                 }
@@ -70,22 +73,22 @@ namespace DirectoryWatcher.Classes.FileProcessing
 
         private void Log(string message)
         {
-            Locker.EnterWriteLock();
+            _locker.EnterWriteLock();
             try
             {
-                Logger.WriteLine(message);
+                _logger.WriteLine(message);
 
             }
             finally
             {
-                Locker.ExitWriteLock();
+                _locker.ExitWriteLock();
             }
         }
 
         private void WriteToDatabase(IEnumerable<FileContentModel> sales, string managerLastName)
         {
             var dtos = CreateDataTransferObjects(sales, managerLastName).ToArray();
-            SaleUnitOfWork.Add();
+            _saleUnitOfWork.Add();
         }
 
         private IEnumerable<SaleDto> CreateDataTransferObjects(IEnumerable<FileContentModel> fileContents,
@@ -93,12 +96,12 @@ namespace DirectoryWatcher.Classes.FileProcessing
         {
             try
             {
-                var dateFormat = ConfigurationManager.AppSettings["dateFormat"];
-                var customerNameSplitter = char.Parse(ConfigurationManager.AppSettings["customerNameSplitter"]);
+                var dateFormat = _config["dateFormat"];
+                var customerNameSplitter = char.Parse(_config["customerNameSplitter"]);
 
                 return (from fileContent in fileContents
                         let date = DateTime.ParseExact(fileContent.Date, dateFormat, null)
-                        let customerName = Parser.ParseLine(fileContent.Customer, customerNameSplitter)
+                        let customerName = _parser.ParseLine(fileContent.Customer, customerNameSplitter)
                         let customerDto = new ClientDto(customerName[0], customerName[1])
                         let productDto = new ProductDto(fileContent.Product)
                         let sum = decimal.Parse(fileContent.Sum)

@@ -7,8 +7,8 @@ namespace DirectoryWatcher.Interfaces.DirectoryWatchers
 {
     interface IDirectoryWatcher
     {
-        void Run(IFileProcessor fileHandler);
+        void Run(IFileProcessor fileProcessor);
 
-        void Stop(IFileProcessor fileHandler);
+        void Stop(IFileProcessor fileProcessor);
     }
 }
