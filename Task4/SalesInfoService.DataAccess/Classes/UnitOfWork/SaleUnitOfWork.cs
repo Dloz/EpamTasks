@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using Microsoft.EntityFrameworkCore;
+using SalesInfoService.DataAccess.Classes.Repositories;
 
 namespace SalesInfoService.DataAccess.Classes.UnitOfWork
 {
@@ -41,24 +43,21 @@ namespace SalesInfoService.DataAccess.Classes.UnitOfWork
             {
                 foreach (var sale in sales)
                 {
-                    if (!_clients.IsClientExists(sale.Client))
-                    {
-                        // TODO
-                    }
-
-                    if (!_managers.IsManagerExists(sale.Manager))
-                    {
-                        // TODO
-                    }
-
-                    if (!_products.IsProductExists(sale.Product))
-                    {
-                        // TODO
-                    }
-
-                    sale.Client.Id = _clients.GetId(sale.Client.FirstName, sale.Client.LastName);
-                    sale.Manager.Id = _managers.GetId(sale.Manager.LastName);
-                    sale.Product.Id = _products.GetId(sale.Product.Name);
+                    //sale.Client.Id = _clients.GetId(sale.Client.FirstName, sale.Client.LastName);
+                    sale.ClientId = _clients.GetId(sale.Client.FirstName, sale.Client.LastName);
+                    sale.Client = null;
+                    
+                    //sale.Manager.Id = _managers.GetId(sale.Manager.LastName);
+                    sale.ManagerId = _managers.GetId(sale.Manager.LastName);
+                    sale.Manager = null;
+                    
+                    //sale.Product.Id = _products.GetId(sale.Product.Name);
+                    sale.ProductId = _products.GetId(sale.Product.Name);
+                    sale.Product = null;
+                    
+//                    _context.Entry(sale.Client).State = EntityState.Unchanged;
+//                    _context.Entry(sale.Manager).State = EntityState.Unchanged;
+//                    _context.Entry(sale.Product).State = EntityState.Unchanged;
 
                     _sales.Add(sale);
                     _sales.Save();
