@@ -1,16 +1,14 @@
-﻿
+﻿using System;
+using System.Linq;
+using System.Linq.Expressions;
+using SalesInfoService.DAL.Classes.Repositories;
 using SalesInfoService.DataAccess.Classes.SalesDbContext;
 using SalesInfoService.DataAccess.Interfaces.Repositories;
 using SalesInfoService.DataAccess.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 
-namespace SalesInfoService.DAL.Classes.Repositories
+namespace SalesInfoService.DataAccess.Classes.Repositories
 {
-    class ProductRepository: GenericRepository<Product>, IProductRepository
+    public class ProductRepository: GenericRepository<Product>, IProductRepository
     {
         public ProductRepository(SalesInfoContext context) : base(context)
         {

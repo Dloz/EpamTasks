@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SalesInfoService.DataAccess.Interfaces.Repositories
 {
-    interface IManagerRepository: IGenericRepository<Manager>
+    public interface IManagerRepository: IGenericRepository<Manager>
     {
         bool IsManagerExists(Manager manager);
 

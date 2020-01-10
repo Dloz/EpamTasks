@@ -1,17 +1,16 @@
-﻿using DirectoryWatcher.Classes.FileProcessing;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using DirectoryWatcher.Classes.FileProcessing;
 using DirectoryWatcher.Classes.Logging;
 using DirectoryWatcher.Interfaces.DirectoryWatchers;
 using DirectoryWatcher.Interfaces.FileProcessing;
 using DirectoryWatcher.Interfaces.Logging;
+using DirectoryWatcher.Classes.Config;
+using DirectoryWatcher.Classes.EventArgs;
 using SalesInfoService.DataAccess.Classes.SalesDbContext;
 using SalesInfoService.DataAccess.Classes.UnitOfWork;
 using SalesInfoService.DataAccess.Interfaces.UnitOfWork;
-using DirectoryWatcher.DirectoryWatchers;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using DirectoryWatcher.Classes.Config;
 using SalesInfoService.DataAccess.Models;
 
 namespace DirectoryWatcher
@@ -27,6 +26,8 @@ namespace DirectoryWatcher
         private ILogger _logger;
         private IFileProcessor _fileProcessor;
 
+        public event EventHandler<FileProcessedEventArgs> FileProcessedEvent;
+
         public Facade(DirectoryWatcherConfig config)
         {
             _context = new SalesInfoContext();
@@ -35,13 +36,19 @@ namespace DirectoryWatcher
 
             _logger = new Logger();
 
-            _directoryWatcher = new DirectoryWatchers.DirectoryWatcher(config["directoryPath"],config["filesFilter"], _logger);
+            _directoryWatcher = new Classes.DirectoryWatchers.DirectoryWatcher(config["directoryPath"],config["filesFilter"], _logger);
 
             _saleUnitOfWork = new SaleUnitOfWork(_context, _locker);
 
             _parser = new Parser();
 
             _fileProcessor = new FileProcessor(_saleUnitOfWork, _parser, _logger, _locker, config);
+            _fileProcessor.FileProcessedEvent += OnFileProcessedEvent;
+        }
+
+        private void OnFileProcessedEvent(object sender, FileProcessedEventArgs e)
+        {
+            FileProcessedEvent?.Invoke(sender, e);
         }
 
         public void Run()

@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using SalesInfoService.BLL.Classes.DataTransferObjects;
 
-namespace SalesInfoService.BLL.Classes.DataTransferObjects
+namespace SalesInfoService.BLL.Models.DataTransferObjects
 {
     public class SaleDto : DataTransferObject
     {

@@ -1,12 +1,10 @@
-﻿using DirectoryWatcher.Interfaces.DirectoryWatchers;
+﻿using System;
+using System.IO;
+using DirectoryWatcher.Interfaces.DirectoryWatchers;
 using DirectoryWatcher.Interfaces.FileProcessing;
 using DirectoryWatcher.Interfaces.Logging;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
-namespace DirectoryWatcher.DirectoryWatchers
+namespace DirectoryWatcher.Classes.DirectoryWatchers
 {
     public class DirectoryWatcher: IDirectoryWatcher
     {

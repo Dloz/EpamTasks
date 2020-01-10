@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using DirectoryWatcher.Classes.EventArgs;
 using SalesInfoService.DataAccess.Models;
 using IParser = DirectoryWatcher.Interfaces.FileProcessing.IParser;
 
@@ -24,6 +25,8 @@ namespace DirectoryWatcher.Classes.FileProcessing
         private IParser _parser;
         private ILogger _logger;
         private DirectoryWatcherConfig _config;
+        
+        public event EventHandler<FileProcessedEventArgs> FileProcessedEvent;
 
         public FileProcessor(ISaleUnitOfWork saleUnitOfWork, IParser parser, ILogger logger, ReaderWriterLockSlim locker, DirectoryWatcherConfig config)
         {
@@ -33,6 +36,7 @@ namespace DirectoryWatcher.Classes.FileProcessing
             _locker = locker;
             _config = config;
         }
+
 
         public void ProcessFile(object source, FileSystemEventArgs e)
         {
@@ -53,7 +57,7 @@ namespace DirectoryWatcher.Classes.FileProcessing
                 catch (HeaderValidationException)
                 {
                     Log($"{e.Name} First Line Must Match Template =>" +
-                        " Date | Customer | Product | Sum");
+                        " Date | Client | Product | Sum");
                 }
                 catch (FormatException exception)
                 {
@@ -61,12 +65,12 @@ namespace DirectoryWatcher.Classes.FileProcessing
                 }
                 catch (ArgumentNullException)
                 {
-                    Log("AppConfig Must Contain Format of Date Entry" +
-                        " and Separator of First and Last Customer Name");
+                    Log("Config Must Contain Format of Date Entry" +
+                        " and Separator of First and Last Client Name");
                 }
                 catch (Exception)
                 {
-                    Log($"{e.Name} AN ERROR OCCURRED, Information is not Added to Database");
+                    Log($"{e.Name} AN ERROR HAS OCCURRED, Information is not Added to Database");
                 }
             });
         }
@@ -87,11 +91,14 @@ namespace DirectoryWatcher.Classes.FileProcessing
 
         private void WriteToDatabase(IEnumerable<FileContentModel> sales, string managerLastName)
         {
-            var dtos = CreateDataTransferObjects(sales, managerLastName).ToArray();
-            _saleUnitOfWork.Add();
+            var models = CreateModels(sales, managerLastName).ToArray();
+            FileProcessedEvent?.Invoke(this, new FileProcessedEventArgs(models));
+            // BL reacts and validates
+            // BL adds through unitOfWork
+            //_saleUnitOfWork.Add(models);
         }
 
-        private IEnumerable<Sale> CreateDataTransferObjects(IEnumerable<FileContentModel> fileContents,
+        private IEnumerable<Sale> CreateModels(IEnumerable<FileContentModel> fileContents,
             string managerLastName)
         {
             try

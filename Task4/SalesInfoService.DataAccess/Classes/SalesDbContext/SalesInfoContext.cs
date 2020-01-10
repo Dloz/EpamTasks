@@ -24,6 +24,7 @@ namespace SalesInfoService.DataAccess.Classes.SalesDbContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseSqlServer("Server=localhost;Database=SalesInfo;Trusted_Connection=True;");
             if (!optionsBuilder.IsConfigured)
             {
             }
@@ -74,7 +75,7 @@ namespace SalesInfoService.DataAccess.Classes.SalesDbContext
             {
                 entity.ToTable("Sale");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Cost).HasColumnType("money");
 

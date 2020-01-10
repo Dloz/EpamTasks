@@ -1,6 +1,6 @@
 {
-  "directoryPath": "..\\..\\..\\SalesStatisticsService.Files\\CSV Files\\",
-  "filesPathForLogging": "..\\..\\..\\SalesStatisticsService.Files\\Log Files\\log.txt",
+  "directoryPath": "..\\..\\..\\..\\ServerFolder\\CSV Files\\",
+  "filesPathForLogging": "..\\..\\..\\..\\ServerFolder\\Log Files\\log.txt",
   "filesFilter": "*.csv",
   "fileNameSplitter": "_",
   "customerNameSplitter": " ",

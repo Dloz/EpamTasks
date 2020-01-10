@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SalesInfoService.BLL.Classes.DataTransferObjects;
+using SalesInfoService.BLL.Models.DataTransferObjects;
 using SalesInfoService.DataAccess.Models;
 
 namespace SalesInfoService.BLL.Classes.AutoMapper
@@ -20,10 +21,7 @@ namespace SalesInfoService.BLL.Classes.AutoMapper
                 config.CreateMap<ManagerDto, Manager>();
 
                 config.CreateMap<Sale, SaleDto>();
-                config.CreateMap<SaleDto, Sale>()
-                    .ForMember(x => x.Client, opt => opt.Ignore())
-                    .ForMember(x => x.Manager, opt => opt.Ignore())
-                    .ForMember(x => x.Product, opt => opt.Ignore());
+                config.CreateMap<SaleDto, Sale>();
             });
         }
     }

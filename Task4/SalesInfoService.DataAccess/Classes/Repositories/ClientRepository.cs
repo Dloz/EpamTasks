@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Collections.Generic;
-using System.Text;
-using SalesInfoService.DataAccess.Models;
+using SalesInfoService.DAL.Classes.Repositories;
 using SalesInfoService.DataAccess.Classes.SalesDbContext;
 using SalesInfoService.DataAccess.Interfaces.Repositories;
+using SalesInfoService.DataAccess.Models;
 
-namespace SalesInfoService.DAL.Classes.Repositories
+namespace SalesInfoService.DataAccess.Classes.Repositories
 {
     public class ClientRepository: GenericRepository<Client>, IClientRepository
     {
@@ -38,7 +37,8 @@ namespace SalesInfoService.DAL.Classes.Repositories
         {
             Expression<Func<Client, bool>> predicate = x =>
                 x.Id == client.Id;
-            return Find(predicate).Any();
+            var clients = Find(predicate);
+            return clients.Count() != 0;
         }
     }
 }

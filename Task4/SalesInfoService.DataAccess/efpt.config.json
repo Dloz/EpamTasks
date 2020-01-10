@@ -6,7 +6,7 @@
    "IdReplace": false,
    "IncludeConnectionString": false,
    "ModelNamespace": null,
-   "OutputContextPath": "Classes\/DbContext",
+   "OutputContextPath": "Classes\/SalesDbContext",
    "OutputPath": "Models",
    "ProjectRootNamespace": "SalesInfoService.DataAccess",
    "SelectedHandlebarsLanguage": 0,

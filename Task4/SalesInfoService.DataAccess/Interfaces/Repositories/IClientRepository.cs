@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SalesInfoService.DataAccess.Interfaces.Repositories
 {
-    interface IClientRepository: IGenericRepository<Client>
+    public interface IClientRepository: IGenericRepository<Client>
     {
         bool IsClientExists(Client client);
 

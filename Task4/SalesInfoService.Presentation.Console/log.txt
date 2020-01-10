@@ -1,0 +1,3 @@
+
+01/10/2020 04:02:08:  Lozovik_10012020.csv Has Been Added to Directory.
+01/10/2020 04:02:09:  Lozovik_10012020.csv Was Successfully Added to Database

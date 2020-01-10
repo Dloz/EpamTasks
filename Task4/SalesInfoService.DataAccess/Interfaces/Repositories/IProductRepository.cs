@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SalesInfoService.DataAccess.Interfaces.Repositories
 {
-    interface IProductRepository : IGenericRepository<Product>
+    public interface IProductRepository : IGenericRepository<Product>
     {
         bool IsProductExists(Product product);
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SalesInfoService.DataAccess.Interfaces.Repositories
 {
-    interface ISaleRepository : IGenericRepository<Sale>
+    public interface ISaleRepository : IGenericRepository<Sale>
     {
     }
 }
